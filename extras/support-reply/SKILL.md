@@ -41,7 +41,7 @@ Titles were the entire cause. Four days and the customer's trust. "Checking that
 
 **8. Never blame them.** "The grouping was pointed at the wrong column", not "you misconfigured it."
 
-**9. No em dashes.** Comma or full stop. This is rule 9 because it is the one tell that makes a correct answer read as generated, and a customer who thinks you sent a bot stops reading at line one. `li-human` enforces it, see below.
+**9. No em dashes.** Comma or full stop. This is rule 9 because it is the one tell that makes a correct answer read as generated, and a customer who thinks you sent a bot stops reading at line one. `human` enforces it, see below.
 
 ## Shape
 
@@ -67,7 +67,7 @@ Drop empty sections. Never pad one to look thorough.
 Pipe it. Never write the draft to a file:
 
 ```bash
-pbpaste | python3 ~/.claude/skills/li-human/humanize.py - --report
+pbpaste | python3 ~/.claude/skills/human/humanize.py - --report
 ```
 
 A finished reply holds store names, SKUs, profile IDs and run IDs. That is customer data, and a draft file on disk gets copied, synced and backed up. Stdin leaves nothing behind. If you need a before/after score, mask the identifiers first.
