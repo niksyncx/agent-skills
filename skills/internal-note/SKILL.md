@@ -13,7 +13,7 @@ seconds what is true, what is not, and what they have to do.
 `support-reply` bans internal vocabulary, keeps the mechanism to one sentence,
 and never shows its working. An internal note does all three in reverse.
 
-- **Use the real names.** `variant_group`, `check_existing?`, `product_title`,
+- **Use the real names.** `row_group`, `dedupe_check`, `product_title`,
   the exact column, the exact profile ID. Translating them for a teammate
   destroys the thing they need to grep for.
 - **Show the mechanism.** That is the note's whole job.
@@ -116,29 +116,32 @@ Two things that will happen and are fine:
 
 ## Worked example
 
+Identifiers below are masked. Profile IDs, SKUs, catalogue sizes, store and
+supplier names are illustrative, the shape is what matters.
+
 > **Status:** cause found, fix not deployed. Blocked on confirming the second
 > profile is unaffected.
 >
 > **Found:**
-> - Feed 473116 groups on `handle`, `existing_product_identifier` is
+> - Feed 100200 groups on `handle`, `match_field` is
 >   `product_title`. The merge never matches, so every group trips the
 >   group-level existing check.
-> - The "1,049 already existing" counter reports products, not variants. Label
+> - The "887 already existing" counter reports products, not variants. Label
 >   is wrong on our side.
 >
 > **Proven:**
 > - Read the profile config directly, both values above.
-> - Run 8841: 3 of 6,464 rows eligible. The rest excluded by the merchant's
+> - Run 1204: 3 of 4,812 rows eligible. The rest excluded by the merchant's
 >   own `BO-`/`LO-` filter or sitting at zero quantity.
-> - Checked all 5,713 variants in store-A, none of the three are present.
+> - Checked all 4,310 variants in store-A, none of the three are present.
 >
 > **Assumed:**
-> - Feed 473103 uses the same grouping and is probably affected too. Not
+> - Feed 100201 uses the same grouping and is probably affected too. Not
 >   opened yet. Reading its config confirms or kills this.
 >
 > **Next:**
-> - Switch 473116 to group by `product_title`, then rerun. Nik, today.
-> - Open 473103 and check `existing_product_identifier`. Nik, before the fix
+> - Switch 100200 to group by `product_title`, then rerun. Nik, today.
+> - Open 100201 and check `match_field`. Nik, before the fix
 >   ships.
 > - Fix the counter label. Backlog, nobody yet.
 

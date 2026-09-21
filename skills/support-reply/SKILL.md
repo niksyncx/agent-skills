@@ -29,13 +29,13 @@ Long is not thorough. Long reads as evasive, which is what they are already angr
 
 Titles were the entire cause. Four days and the customer's trust. "Checking that now" always beats a plausible sentence.
 
-**3. No internal vocabulary.** `variant_group` becomes "the setting that groups rows into one product". `check_existing?` becomes "the step that checks whether the product is already in your store". Names the customer can see in the app are fine, quote those exactly.
+**3. No internal vocabulary.** `row_group` becomes "the setting that groups rows into one product". `dedupe_check` becomes "the step that checks whether the product is already in your store". Names the customer can see in the app are fine, quote those exactly.
 
 **4. Split by who fixes it.** We fixed / you change / your supplier changes. Conflating these is what makes people feel stonewalled. Name exact records in the last two.
 
 **5. Every question answered, but grouped.** Never leave one out, an omission reads as evasion. Never give each its own paragraph either. Share a cause, share a line.
 
-**6. One proving number.** "3 of your 6,464 rows were eligible" ends the argument. Pull it from the run.
+**6. One proving number.** "3 of your 4,812 rows were eligible" ends the argument. Pull it from the run.
 
 **7. Never claim a verification you did not run.** If the test import hasn't been read, leave a marked placeholder and do not send.
 
@@ -96,23 +96,26 @@ A finished reply holds store names, SKUs, profile IDs and run IDs. That is custo
 - Verification real, or marked as pending?
 - Piped through `humanize.py`, diff read, zero em dashes left?
 
-## Worked example, profile 473116, Almond Leather
+## Worked example, profile 100200, store-A
 
-Found: grouping keyed on `handle` while `existing_product_identifier` was `product_title`, so the merge never matched and every group tripped the group-level existing check. 3 eligible SKUs. One blocked by a store-side rename, one duplicated by the supplier. Customer asked nine questions.
+Identifiers below are masked. Profile IDs, SKUs, catalogue sizes, store and
+supplier names are illustrative, the shape is what matters.
+
+Found: grouping keyed on `handle` while `match_field` was `product_title`, so the merge never matched and every group tripped the group-level existing check. 3 eligible SKUs. One blocked by a store-side rename, one duplicated by the supplier. Customer asked nine questions.
 
 The reply, as it went out after the humanize pass:
 
 > Your Add feed grouped supplier rows by the supplier's handle, but your merge setting matches on product title, so every new variant was treated as already existing and skipped.
 >
-> **Fixed:** feed 473116 now groups by Product Title. Live now. Your filter, prices, product statuses and feed 473103 are untouched.
+> **Fixed:** feed 100200 now groups by Product Title. Live now. Your filter, prices, product statuses and feed 100201 are untouched.
 >
-> 3 of your 6,464 rows were genuinely new, the three you sent us. Your audit was right. The ~652 others are excluded by your own BO-/LO- filter or sit at zero quantity. Those are working as configured.
+> 3 of your 4,812 rows were genuinely new, the three you sent us. Your audit was right. The ~430 others are excluded by your own BO-/LO- filter or sit at zero quantity. Those are working as configured.
 >
 > **Still needs action:**
-> - `LO-03-TRRO-TAN00-00016-00`, this product was renamed in your store. Bouletta calls it *Truro Leather Business Briefcase / Laptop Case 16" with Suitcase*; your store says *Truro 16-Inch Leather Laptop Briefcase*. Rename it back, or ask us to map the title.
-> - `LO-02-S003-YK07N-042MM-00`, Bouletta sends one SKU for two sizes (qty 14 and 11). They need a separate SKU for 40/41/42mm.
+> - `LO-03-****-00016-00`, this product was renamed in your store. supplier-B calls it *Harbour Leather Business Briefcase / Laptop Case 16" with Case*; your store says *Harbour 16-Inch Leather Laptop Case*. Rename it back, or ask us to map the title.
+> - `LO-02-****-042MM-00`, supplier-B sends one SKU for two sizes (qty 14 and 11). They need a separate SKU for 40/41/42mm.
 >
-> **Your other questions:** none of the three are in your store, we checked all 5,713 variants. All three have stock, so "skip zero quantity" isn't involved. Your filter evaluated correctly and passed all three. The "1,049 already existing" figure counts products, not variants; that label is wrong on our side.
+> **Your other questions:** none of the three are in your store, we checked all 4,310 variants. All three have stock, so "skip zero quantity" isn't involved. Your filter evaluated correctly and passed all three. The "887 already existing" figure counts products, not variants; that label is wrong on our side.
 >
 > **Verified:** run [ID] merged [variant]. Next daily run 08:30.
 
