@@ -8,7 +8,7 @@
     {
       "name": "syncx",
       "source": "./",
-      "description": "Draft the customer reply, then strip the machine fingerprint out of it before it goes out.",
+      "description": "Draft the customer reply, explain the code change, then strip the machine fingerprint out of it before it goes out.",
       "category": "productivity",
       "keywords": [
         "writing",
@@ -16,7 +16,10 @@
         "em-dash",
         "ai-detection",
         "support",
-        "support-reply"
+        "support-reply",
+        "diff",
+        "explain-change",
+        "internal-note"
       ]
     }
   ]

@@ -1,11 +1,16 @@
-# syncx-claude-plugin
+# syncx-agent-skill
 
-Internal Claude Code plugin for Syncx. Two skills: `human` and `support-reply`.
+Internal Syncx tooling. Four skills: `human`, `support-reply`, `explain-change`
+and `internal-note`, packaged as a Claude Code plugin.
+
+The Python in `skills/human/` is stdlib-only and has no Claude dependency. It
+runs as a plain CLI, in a git hook, or as a CI gate, with or without an agent.
 
 ## What it does
 
-`support-reply` decides what to say to a customer. `human` decides how it
-reads. Use them in that order.
+`support-reply` decides what to say to a customer. `explain-change` explains a
+code change to whoever did not write it. `human` decides how either one reads,
+and runs last.
 
 `human` strips the machine fingerprint out of a draft and scores what is left. Two
 Python scripts, one editable lexicon, no dependencies, no network. Everything
@@ -17,20 +22,23 @@ marketing copy. Do not use it on code, logs or exact error strings.
 
 ## Install
 
-```bash
-/plugin marketplace add ~/Documents/GitHub/syncx-claude-plugin
-/plugin install syncx@syncx
-```
-
 Once this is pushed to the Syncx org, teammates use the remote instead:
 
 ```bash
-/plugin marketplace add syncx/syncx-claude-plugin
+/plugin marketplace add syncx-org/syncx-agent-skill
 /plugin install syncx@syncx
 ```
 
-Both commands need an interactive `claude` terminal. The Claude desktop app
-does not open plugin dialogs.
+Both commands need an interactive `claude` terminal.
+
+### Claude Code desktop app
+
+`/plugin` does nothing in the desktop app. Paste this into a session instead:
+
+```
+https://github.com/syncx-org/syncx-agent-skill
+Install this skill, then confirm /human works.
+```
 
 ## Use
 
@@ -50,6 +58,8 @@ synced and backed up. Mask the identifiers before a file exists, not after.
 ## Layout
 
 ```
+AGENTS.md              pointer file for non-Claude agents: what each skill
+                       is for, the CLI, and the rules that bite
 .claude-plugin/
   plugin.json          plugin manifest
   marketplace.json     single-plugin marketplace, so the repo installs directly
@@ -61,6 +71,12 @@ skills/human/
 skills/support-reply/
   SKILL.md             turn a finished investigation into a reply the
                        customer can act on, then hand it to human
+skills/explain-change/
+  SKILL.md             explain a diff, branch or PR as plain text:
+                       background, intuition, code, consequences
+skills/internal-note/
+  SKILL.md             write up an investigation for the team, proven
+                       split from assumed, every action owned
 ```
 
 ## The lexicon is yours
