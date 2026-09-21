@@ -31,16 +31,6 @@ Or as a plugin, in an interactive `claude` terminal:
 /plugin install syncx@syncx-agent-skills
 ```
 
-Working on the skills themselves, point the marketplace at your checkout so
-edits are live without reinstalling:
-
-```bash
-/plugin marketplace add ~/Documents/GitHub/agent-skills
-```
-
-Project-local instead of global: copy the same folders into your repo's
-`.claude/skills/`.
-
 Claude Code only, for now. The skills are written against its plugin and skill
 loading, and nothing else has been tested.
 
