@@ -71,8 +71,7 @@ What comes out automatically:
 - **Typography.** 11 substitutions. Em dash to comma, en dash to hyphen, curly
   quotes to straight, ellipsis to three dots.
 - **The lexicon.** 81 words and 32 phrases with plain-English replacements,
-  capitalisation preserved and URLs untouched. It lives in `slop.json` and it is
-  meant to be edited.
+  capitalisation preserved and URLs untouched. It lives in `slop.json`.
 
 What gets flagged instead of fixed: 11 structural tells, including "It's not
 just X, it's Y", rule-of-three triads, one-word rhetorical questions and uniform
@@ -150,12 +149,6 @@ skills/internal-note/SKILL.md    investigation into a note for the team
 skills/explain-change/SKILL.md   diff, branch or PR into plain text
 .claude-plugin/                  plugin and single-plugin marketplace manifests
 ```
-
-## The lexicon is yours
-
-`slop.json` is meant to be edited. If it strips a word the team actually uses,
-delete that entry and commit it. That is the intended workflow, not a
-workaround.
 
 ## Scope
 

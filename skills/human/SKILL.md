@@ -25,8 +25,7 @@ pbpaste | python3 humanize.py - --report       # nothing touches disk
 
 Both read `slop.json`, which is the lexicon: 100+ stock words and phrases with
 plain-English replacements, 17 invisible character classes, 11 typographic
-substitutions, and 11 structural tells. It is meant to be edited. If the user
-has a word they always use that the lexicon strips, remove it from the file.
+substitutions, and 11 structural tells.
 
 ## What this is for at Syncx
 

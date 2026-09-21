@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "note": "Lexicon used by humanize.py and detect.py. Replacements are plain-English and keep the sentence grammatical. Edit freely - it is meant to be yours.",
+  "note": "Lexicon used by humanize.py and detect.py. Replacements are plain-English and keep the sentence grammatical.",
   "invisible": [
     {
       "cp": "U+200B",
