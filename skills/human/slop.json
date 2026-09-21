@@ -147,128 +147,108 @@
   ],
   "words": [
     {
-      "find": "delve into",
-      "replace": "look at",
+      "find": "delving into the intricacies of",
+      "replace": "looking closely at",
       "family": "verbs"
     },
     {
-      "find": "delve",
-      "replace": "look",
-      "family": "verbs"
+      "find": "it is worth noting that",
+      "replace": "note that",
+      "family": "connectives"
     },
     {
-      "find": "dive deep into",
-      "replace": "get into",
-      "family": "verbs"
-    },
-    {
-      "find": "deep dive",
-      "replace": "breakdown",
+      "find": "disruptive innovation",
+      "replace": "a big change",
       "family": "nouns"
     },
     {
-      "find": "leverage",
-      "replace": "use",
-      "family": "verbs"
-    },
-    {
-      "find": "leveraging",
-      "replace": "using",
-      "family": "verbs"
-    },
-    {
-      "find": "utilize",
-      "replace": "use",
-      "family": "verbs"
-    },
-    {
-      "find": "utilizing",
-      "replace": "using",
-      "family": "verbs"
-    },
-    {
-      "find": "harness",
-      "replace": "use",
-      "family": "verbs"
-    },
-    {
-      "find": "embark on",
+      "find": "embark on a journey",
       "replace": "start",
       "family": "verbs"
     },
     {
-      "find": "foster",
-      "replace": "build",
+      "find": "actionable insights",
+      "replace": "things you can act on",
+      "family": "nouns"
+    },
+    {
+      "find": "growing recognition",
+      "replace": "wider agreement",
+      "family": "nouns"
+    },
+    {
+      "find": "embark on a voyage",
+      "replace": "start",
       "family": "verbs"
     },
     {
-      "find": "facilitate",
-      "replace": "help",
+      "find": "thought leadership",
+      "replace": "opinion writing",
+      "family": "nouns"
+    },
+    {
+      "find": "fresh perspectives",
+      "replace": "new angles",
+      "family": "nouns"
+    },
+    {
+      "find": "shedding light on",
+      "replace": "showing",
       "family": "verbs"
     },
     {
-      "find": "showcase",
-      "replace": "show",
-      "family": "verbs"
+      "find": "thought-provoking",
+      "replace": "interesting",
+      "family": "adjectives"
     },
     {
-      "find": "unlock",
-      "replace": "get",
-      "family": "verbs"
+      "find": "when it comes to",
+      "replace": "with",
+      "family": "connectives"
     },
     {
-      "find": "elevate",
-      "replace": "improve",
-      "family": "verbs"
+      "find": "uncharted waters",
+      "replace": "new ground",
+      "family": "nouns"
     },
     {
-      "find": "streamline",
-      "replace": "simplify",
-      "family": "verbs"
+      "find": "rapidly evolving",
+      "replace": "changing fast",
+      "family": "adjectives"
     },
     {
-      "find": "spearhead",
-      "replace": "lead",
-      "family": "verbs"
+      "find": "state-of-the-art",
+      "replace": "current",
+      "family": "adjectives"
     },
     {
-      "find": "underscore",
-      "replace": "show",
-      "family": "verbs"
+      "find": "a wide range of",
+      "replace": "many",
+      "family": "connectives"
     },
     {
-      "find": "underscores",
-      "replace": "shows",
-      "family": "verbs"
+      "find": "thought leaders",
+      "replace": "experts",
+      "family": "nouns"
     },
     {
-      "find": "cultivate",
-      "replace": "build",
-      "family": "verbs"
+      "find": "next-generation",
+      "replace": "newer",
+      "family": "adjectives"
     },
     {
-      "find": "amplify",
-      "replace": "boost",
-      "family": "verbs"
+      "find": "that being said",
+      "replace": "even so",
+      "family": "connectives"
     },
     {
-      "find": "curate",
-      "replace": "pick",
-      "family": "verbs"
+      "find": "with regards to",
+      "replace": "about",
+      "family": "connectives"
     },
     {
-      "find": "curated",
-      "replace": "picked",
-      "family": "verbs"
-    },
-    {
-      "find": "empower",
-      "replace": "let",
-      "family": "verbs"
-    },
-    {
-      "find": "revolutionize",
-      "replace": "change",
+      "find": "dive deep into",
+      "replace": "get into",
       "family": "verbs"
     },
     {
@@ -277,43 +257,38 @@
       "family": "adjectives"
     },
     {
-      "find": "robust",
-      "replace": "solid",
+      "find": "groundbreaking",
+      "replace": "new",
       "family": "adjectives"
     },
     {
-      "find": "seamless",
-      "replace": "clean",
+      "find": "treasure trove",
+      "replace": "pile",
+      "family": "nouns"
+    },
+    {
+      "find": "paradigm shift",
+      "replace": "big change",
+      "family": "nouns"
+    },
+    {
+      "find": "a multitude of",
+      "replace": "many",
       "family": "adjectives"
     },
     {
-      "find": "seamlessly",
-      "replace": "cleanly",
-      "family": "adjectives"
+      "find": "moving forward",
+      "replace": "from now on",
+      "family": "connectives"
     },
     {
-      "find": "pivotal",
-      "replace": "key",
-      "family": "adjectives"
-    },
-    {
-      "find": "crucial",
-      "replace": "important",
-      "family": "adjectives"
-    },
-    {
-      "find": "vital",
-      "replace": "important",
-      "family": "adjectives"
+      "find": "revolutionize",
+      "replace": "change",
+      "family": "verbs"
     },
     {
       "find": "comprehensive",
       "replace": "complete",
-      "family": "adjectives"
-    },
-    {
-      "find": "cutting-edge",
-      "replace": "new",
       "family": "adjectives"
     },
     {
@@ -322,28 +297,43 @@
       "family": "adjectives"
     },
     {
+      "find": "in conclusion",
+      "replace": "so",
+      "family": "connectives"
+    },
+    {
+      "find": "golden ticket",
+      "replace": "shortcut",
+      "family": "nouns"
+    },
+    {
+      "find": "key takeaways",
+      "replace": "the main points",
+      "family": "nouns"
+    },
+    {
+      "find": "ever-evolving",
+      "replace": "changing",
+      "family": "adjectives"
+    },
+    {
+      "find": "going forward",
+      "replace": "from now on",
+      "family": "connectives"
+    },
+    {
+      "find": "cutting-edge",
+      "replace": "new",
+      "family": "adjectives"
+    },
+    {
       "find": "game-changer",
       "replace": "big deal",
       "family": "nouns"
     },
     {
-      "find": "groundbreaking",
-      "replace": "new",
-      "family": "adjectives"
-    },
-    {
       "find": "unparalleled",
       "replace": "unmatched",
-      "family": "adjectives"
-    },
-    {
-      "find": "invaluable",
-      "replace": "useful",
-      "family": "adjectives"
-    },
-    {
-      "find": "meticulous",
-      "replace": "careful",
       "family": "adjectives"
     },
     {
@@ -352,134 +342,14 @@
       "family": "adjectives"
     },
     {
-      "find": "myriad of",
-      "replace": "many",
-      "family": "adjectives"
-    },
-    {
-      "find": "myriad",
-      "replace": "many",
-      "family": "adjectives"
-    },
-    {
       "find": "multifaceted",
       "replace": "complicated",
       "family": "adjectives"
     },
     {
-      "find": "holistic",
-      "replace": "whole",
-      "family": "adjectives"
-    },
-    {
-      "find": "bespoke",
-      "replace": "custom",
-      "family": "adjectives"
-    },
-    {
-      "find": "innovative",
-      "replace": "new",
-      "family": "adjectives"
-    },
-    {
-      "find": "profound",
-      "replace": "big",
-      "family": "adjectives"
-    },
-    {
-      "find": "remarkable",
-      "replace": "notable",
-      "family": "adjectives"
-    },
-    {
-      "find": "compelling",
-      "replace": "convincing",
-      "family": "adjectives"
-    },
-    {
-      "find": "tapestry",
-      "replace": "mix",
-      "family": "nouns"
-    },
-    {
-      "find": "realm",
-      "replace": "world",
-      "family": "nouns"
-    },
-    {
-      "find": "landscape",
-      "replace": "market",
-      "family": "nouns"
-    },
-    {
-      "find": "journey",
-      "replace": "process",
-      "family": "nouns"
-    },
-    {
       "find": "testament to",
       "replace": "proof of",
       "family": "nouns"
-    },
-    {
-      "find": "cornerstone",
-      "replace": "base",
-      "family": "nouns"
-    },
-    {
-      "find": "beacon",
-      "replace": "signal",
-      "family": "nouns"
-    },
-    {
-      "find": "paradigm",
-      "replace": "model",
-      "family": "nouns"
-    },
-    {
-      "find": "synergy",
-      "replace": "overlap",
-      "family": "nouns"
-    },
-    {
-      "find": "ecosystem",
-      "replace": "system",
-      "family": "nouns"
-    },
-    {
-      "find": "treasure trove",
-      "replace": "pile",
-      "family": "nouns"
-    },
-    {
-      "find": "plethora of",
-      "replace": "lots of",
-      "family": "nouns"
-    },
-    {
-      "find": "plethora",
-      "replace": "lots",
-      "family": "nouns"
-    },
-    {
-      "find": "arsenal",
-      "replace": "set",
-      "family": "nouns"
-    },
-    {
-      "find": "north star",
-      "replace": "goal",
-      "family": "nouns"
-    },
-    {
-      "find": "moreover",
-      "replace": "also",
-      "family": "connectives"
-    },
-    {
-      "find": "furthermore",
-      "replace": "also",
-      "family": "connectives"
     },
     {
       "find": "additionally",
@@ -497,24 +367,139 @@
       "family": "connectives"
     },
     {
-      "find": "thus",
-      "replace": "so",
-      "family": "connectives"
+      "find": "kaleidoscope",
+      "replace": "mix",
+      "family": "nouns"
     },
     {
-      "find": "hence",
-      "replace": "so",
-      "family": "connectives"
+      "find": "enlightening",
+      "replace": "useful",
+      "family": "adjectives"
     },
     {
-      "find": "notably",
-      "replace": "",
+      "find": "well-crafted",
+      "replace": "well made",
+      "family": "adjectives"
+    },
+    {
+      "find": "future-proof",
+      "replace": "durable",
+      "family": "adjectives"
+    },
+    {
+      "find": "underscores",
+      "replace": "shows",
+      "family": "verbs"
+    },
+    {
+      "find": "cornerstone",
+      "replace": "base",
+      "family": "nouns"
+    },
+    {
+      "find": "plethora of",
+      "replace": "lots of",
+      "family": "nouns"
+    },
+    {
+      "find": "furthermore",
+      "replace": "also",
       "family": "connectives"
     },
     {
       "find": "importantly",
       "replace": "",
       "family": "connectives"
+    },
+    {
+      "find": "in order to",
+      "replace": "to",
+      "family": "connectives"
+    },
+    {
+      "find": "flourishing",
+      "replace": "doing well",
+      "family": "verbs"
+    },
+    {
+      "find": "new heights",
+      "replace": "further",
+      "family": "nouns"
+    },
+    {
+      "find": "captivating",
+      "replace": "interesting",
+      "family": "adjectives"
+    },
+    {
+      "find": "commendable",
+      "replace": "good",
+      "family": "adjectives"
+    },
+    {
+      "find": "undoubtedly",
+      "replace": "clearly",
+      "family": "connectives"
+    },
+    {
+      "find": "delve into",
+      "replace": "look at",
+      "family": "verbs"
+    },
+    {
+      "find": "leveraging",
+      "replace": "using",
+      "family": "verbs"
+    },
+    {
+      "find": "facilitate",
+      "replace": "help",
+      "family": "verbs"
+    },
+    {
+      "find": "streamline",
+      "replace": "simplify",
+      "family": "verbs"
+    },
+    {
+      "find": "underscore",
+      "replace": "show",
+      "family": "verbs"
+    },
+    {
+      "find": "seamlessly",
+      "replace": "cleanly",
+      "family": "adjectives"
+    },
+    {
+      "find": "invaluable",
+      "replace": "useful",
+      "family": "adjectives"
+    },
+    {
+      "find": "meticulous",
+      "replace": "careful",
+      "family": "adjectives"
+    },
+    {
+      "find": "innovative",
+      "replace": "new",
+      "family": "adjectives"
+    },
+    {
+      "find": "remarkable",
+      "replace": "notable",
+      "family": "adjectives"
+    },
+    {
+      "find": "compelling",
+      "replace": "convincing",
+      "family": "adjectives"
+    },
+    {
+      "find": "north star",
+      "replace": "goal",
+      "family": "nouns"
     },
     {
       "find": "ultimately",
@@ -527,42 +512,352 @@
       "family": "connectives"
     },
     {
-      "find": "in conclusion",
+      "find": "shed light",
+      "replace": "show",
+      "family": "verbs"
+    },
+    {
+      "find": "burgeoning",
+      "replace": "growing",
+      "family": "adjectives"
+    },
+    {
+      "find": "entrenched",
+      "replace": "fixed",
+      "family": "adjectives"
+    },
+    {
+      "find": "relentless",
+      "replace": "constant",
+      "family": "adjectives"
+    },
+    {
+      "find": "undeniable",
+      "replace": "clear",
+      "family": "adjectives"
+    },
+    {
+      "find": "deep dive",
+      "replace": "breakdown",
+      "family": "nouns"
+    },
+    {
+      "find": "utilizing",
+      "replace": "using",
+      "family": "verbs"
+    },
+    {
+      "find": "embark on",
+      "replace": "start",
+      "family": "verbs"
+    },
+    {
+      "find": "spearhead",
+      "replace": "lead",
+      "family": "verbs"
+    },
+    {
+      "find": "cultivate",
+      "replace": "build",
+      "family": "verbs"
+    },
+    {
+      "find": "myriad of",
+      "replace": "many",
+      "family": "adjectives"
+    },
+    {
+      "find": "landscape",
+      "replace": "market",
+      "family": "nouns"
+    },
+    {
+      "find": "ecosystem",
+      "replace": "system",
+      "family": "nouns"
+    },
+    {
+      "find": "epicenter",
+      "replace": "centre",
+      "family": "nouns"
+    },
+    {
+      "find": "cognizant",
+      "replace": "aware",
+      "family": "adjectives"
+    },
+    {
+      "find": "exemplary",
+      "replace": "very good",
+      "family": "adjectives"
+    },
+    {
+      "find": "impactful",
+      "replace": "effective",
+      "family": "adjectives"
+    },
+    {
+      "find": "pervasive",
+      "replace": "widespread",
+      "family": "adjectives"
+    },
+    {
+      "find": "leverage",
+      "replace": "use",
+      "family": "verbs"
+    },
+    {
+      "find": "showcase",
+      "replace": "show",
+      "family": "verbs"
+    },
+    {
+      "find": "seamless",
+      "replace": "clean",
+      "family": "adjectives"
+    },
+    {
+      "find": "holistic",
+      "replace": "whole",
+      "family": "adjectives"
+    },
+    {
+      "find": "profound",
+      "replace": "big",
+      "family": "adjectives"
+    },
+    {
+      "find": "tapestry",
+      "replace": "mix",
+      "family": "nouns"
+    },
+    {
+      "find": "paradigm",
+      "replace": "model",
+      "family": "nouns"
+    },
+    {
+      "find": "plethora",
+      "replace": "lots",
+      "family": "nouns"
+    },
+    {
+      "find": "moreover",
+      "replace": "also",
+      "family": "connectives"
+    },
+    {
+      "find": "embarked",
+      "replace": "started",
+      "family": "verbs"
+    },
+    {
+      "find": "resonate",
+      "replace": "land",
+      "family": "verbs"
+    },
+    {
+      "find": "thriving",
+      "replace": "doing well",
+      "family": "verbs"
+    },
+    {
+      "find": "enriches",
+      "replace": "improves",
+      "family": "verbs"
+    },
+    {
+      "find": "linchpin",
+      "replace": "the key part",
+      "family": "nouns"
+    },
+    {
+      "find": "esteemed",
+      "replace": "respected",
+      "family": "adjectives"
+    },
+    {
+      "find": "manifold",
+      "replace": "many",
+      "family": "adjectives"
+    },
+    {
+      "find": "utilize",
+      "replace": "use",
+      "family": "verbs"
+    },
+    {
+      "find": "harness",
+      "replace": "use",
+      "family": "verbs"
+    },
+    {
+      "find": "elevate",
+      "replace": "improve",
+      "family": "verbs"
+    },
+    {
+      "find": "amplify",
+      "replace": "boost",
+      "family": "verbs"
+    },
+    {
+      "find": "curated",
+      "replace": "picked",
+      "family": "verbs"
+    },
+    {
+      "find": "empower",
+      "replace": "let",
+      "family": "verbs"
+    },
+    {
+      "find": "pivotal",
+      "replace": "key",
+      "family": "adjectives"
+    },
+    {
+      "find": "crucial",
+      "replace": "important",
+      "family": "adjectives"
+    },
+    {
+      "find": "bespoke",
+      "replace": "custom",
+      "family": "adjectives"
+    },
+    {
+      "find": "journey",
+      "replace": "process",
+      "family": "nouns"
+    },
+    {
+      "find": "synergy",
+      "replace": "overlap",
+      "family": "nouns"
+    },
+    {
+      "find": "arsenal",
+      "replace": "set",
+      "family": "nouns"
+    },
+    {
+      "find": "notably",
+      "replace": "",
+      "family": "connectives"
+    },
+    {
+      "find": "delving",
+      "replace": "looking",
+      "family": "verbs"
+    },
+    {
+      "find": "unleash",
+      "replace": "release",
+      "family": "verbs"
+    },
+    {
+      "find": "arduous",
+      "replace": "hard",
+      "family": "adjectives"
+    },
+    {
+      "find": "vibrant",
+      "replace": "lively",
+      "family": "adjectives"
+    },
+    {
+      "find": "foster",
+      "replace": "build",
+      "family": "verbs"
+    },
+    {
+      "find": "unlock",
+      "replace": "get",
+      "family": "verbs"
+    },
+    {
+      "find": "curate",
+      "replace": "pick",
+      "family": "verbs"
+    },
+    {
+      "find": "robust",
+      "replace": "solid",
+      "family": "adjectives"
+    },
+    {
+      "find": "myriad",
+      "replace": "many",
+      "family": "adjectives"
+    },
+    {
+      "find": "beacon",
+      "replace": "signal",
+      "family": "nouns"
+    },
+    {
+      "find": "embark",
+      "replace": "start",
+      "family": "verbs"
+    },
+    {
+      "find": "delved",
+      "replace": "looked",
+      "family": "verbs"
+    },
+    {
+      "find": "thrive",
+      "replace": "do well",
+      "family": "verbs"
+    },
+    {
+      "find": "utmost",
+      "replace": "greatest",
+      "family": "connectives"
+    },
+    {
+      "find": "whilst",
+      "replace": "while",
+      "family": "connectives"
+    },
+    {
+      "find": "delve",
+      "replace": "look",
+      "family": "verbs"
+    },
+    {
+      "find": "vital",
+      "replace": "important",
+      "family": "adjectives"
+    },
+    {
+      "find": "realm",
+      "replace": "world",
+      "family": "nouns"
+    },
+    {
+      "find": "hence",
       "replace": "so",
       "family": "connectives"
     },
     {
-      "find": "when it comes to",
-      "replace": "with",
-      "family": "connectives"
+      "find": "glean",
+      "replace": "gather",
+      "family": "verbs"
     },
     {
-      "find": "in order to",
-      "replace": "to",
-      "family": "connectives"
+      "find": "foray",
+      "replace": "attempt",
+      "family": "nouns"
     },
     {
-      "find": "a wide range of",
-      "replace": "many",
-      "family": "connectives"
-    },
-    {
-      "find": "it is worth noting that",
-      "replace": "note that",
+      "find": "thus",
+      "replace": "so",
       "family": "connectives"
     }
   ],
   "phrases": [
-    {
-      "find": "in today's fast-paced world",
-      "replace": "right now",
-      "family": "openers"
-    },
-    {
-      "find": "in today's digital age",
-      "replace": "right now",
-      "family": "openers"
-    },
     {
       "find": "in the ever-evolving landscape of",
       "replace": "in",
@@ -574,18 +869,58 @@
       "family": "openers"
     },
     {
-      "find": "let's face it",
+      "find": "it is important to note that",
+      "replace": "note that",
+      "family": "openers"
+    },
+    {
+      "find": "in today's fast-paced world",
+      "replace": "right now",
+      "family": "openers"
+    },
+    {
+      "find": "from inception to execution",
+      "replace": "start to finish",
+      "family": "closers"
+    },
+    {
+      "find": "i am excited to announce",
       "replace": "",
       "family": "openers"
     },
     {
-      "find": "here's the thing",
-      "replace": "",
+      "find": "navigating the landscape",
+      "replace": "working through this",
       "family": "openers"
     },
     {
-      "find": "picture this",
+      "find": "what are your thoughts?",
       "replace": "",
+      "family": "closers"
+    },
+    {
+      "find": "it is important to note",
+      "replace": "note that",
+      "family": "openers"
+    },
+    {
+      "find": "in the dynamic world of",
+      "replace": "in",
+      "family": "openers"
+    },
+    {
+      "find": "in today's digital age",
+      "replace": "right now",
+      "family": "openers"
+    },
+    {
+      "find": "had the opportunity to",
+      "replace": "got to",
+      "family": "connectives"
+    },
+    {
+      "find": "it's worth noting that",
+      "replace": "note that",
       "family": "openers"
     },
     {
@@ -594,7 +929,12 @@
       "family": "openers"
     },
     {
-      "find": "it's no secret that",
+      "find": "at the end of the day",
+      "replace": "",
+      "family": "closers"
+    },
+    {
+      "find": "i'm thrilled to share",
       "replace": "",
       "family": "openers"
     },
@@ -604,9 +944,24 @@
       "family": "openers"
     },
     {
-      "find": "let that sink in",
+      "find": "drop a comment below",
       "replace": "",
       "family": "closers"
+    },
+    {
+      "find": "cannot be overstated",
+      "replace": "matters",
+      "family": "closers"
+    },
+    {
+      "find": "transforming the way",
+      "replace": "changing how",
+      "family": "closers"
+    },
+    {
+      "find": "it's no secret that",
+      "replace": "",
+      "family": "openers"
     },
     {
       "find": "the choice is yours",
@@ -614,7 +969,12 @@
       "family": "closers"
     },
     {
-      "find": "food for thought",
+      "find": "without further ado",
+      "replace": "",
+      "family": "openers"
+    },
+    {
+      "find": "save this for later",
       "replace": "",
       "family": "closers"
     },
@@ -624,23 +984,53 @@
       "family": "closers"
     },
     {
-      "find": "what are your thoughts?",
+      "find": "the harsh truth is",
+      "replace": "",
+      "family": "openers"
+    },
+    {
+      "find": "it is worth noting",
+      "replace": "note that",
+      "family": "openers"
+    },
+    {
+      "find": "driving innovation",
+      "replace": "making new things",
+      "family": "closers"
+    },
+    {
+      "find": "the next frontier",
+      "replace": "what comes next",
+      "family": "closers"
+    },
+    {
+      "find": "foster innovation",
+      "replace": "make new things",
+      "family": "closers"
+    },
+    {
+      "find": "here's the thing",
+      "replace": "",
+      "family": "openers"
+    },
+    {
+      "find": "let that sink in",
       "replace": "",
       "family": "closers"
     },
     {
-      "find": "drop a comment below",
+      "find": "food for thought",
       "replace": "",
       "family": "closers"
     },
     {
-      "find": "at the end of the day",
-      "replace": "",
-      "family": "closers"
+      "find": "in today's world",
+      "replace": "right now",
+      "family": "openers"
     },
     {
-      "find": "needle-moving",
-      "replace": "useful",
+      "find": "to shed light on",
+      "replace": "to show",
       "family": "closers"
     },
     {
@@ -649,47 +1039,7 @@
       "family": "closers"
     },
     {
-      "find": "a testament to",
-      "replace": "proof of",
-      "family": "nouns"
-    },
-    {
-      "find": "had the opportunity to",
-      "replace": "got to",
-      "family": "connectives"
-    },
-    {
-      "find": "i am excited to announce",
-      "replace": "",
-      "family": "openers"
-    },
-    {
-      "find": "i'm thrilled to share",
-      "replace": "",
-      "family": "openers"
-    },
-    {
       "find": "i am humbled to",
-      "replace": "",
-      "family": "openers"
-    },
-    {
-      "find": "without further ado",
-      "replace": "",
-      "family": "openers"
-    },
-    {
-      "find": "buckle up",
-      "replace": "",
-      "family": "openers"
-    },
-    {
-      "find": "the harsh truth is",
-      "replace": "",
-      "family": "openers"
-    },
-    {
-      "find": "spoiler alert",
       "replace": "",
       "family": "openers"
     },
@@ -699,19 +1049,69 @@
       "family": "closers"
     },
     {
+      "find": "in the realm of",
+      "replace": "in",
+      "family": "openers"
+    },
+    {
+      "find": "the linchpin of",
+      "replace": "the key part of",
+      "family": "closers"
+    },
+    {
+      "find": "a testament to",
+      "replace": "proof of",
+      "family": "nouns"
+    },
+    {
       "find": "you're welcome",
       "replace": "",
       "family": "closers"
     },
     {
-      "find": "save this for later",
-      "replace": "",
+      "find": "the road ahead",
+      "replace": "what comes next",
       "family": "closers"
+    },
+    {
+      "find": "let's face it",
+      "replace": "",
+      "family": "openers"
+    },
+    {
+      "find": "needle-moving",
+      "replace": "useful",
+      "family": "closers"
+    },
+    {
+      "find": "spoiler alert",
+      "replace": "",
+      "family": "openers"
     },
     {
       "find": "who's with me",
       "replace": "",
       "family": "closers"
+    },
+    {
+      "find": "picture this",
+      "replace": "",
+      "family": "openers"
+    },
+    {
+      "find": "the power of",
+      "replace": "what X does",
+      "family": "closers"
+    },
+    {
+      "find": "in a sea of",
+      "replace": "among",
+      "family": "openers"
+    },
+    {
+      "find": "buckle up",
+      "replace": "",
+      "family": "openers"
     }
   ],
   "structures": [

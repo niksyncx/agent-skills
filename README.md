@@ -70,7 +70,7 @@ What comes out automatically:
   and they are invisible in every editor you own.
 - **Typography.** 11 substitutions. Em dash to comma, en dash to hyphen, curly
   quotes to straight, ellipsis to three dots.
-- **The lexicon.** 81 words and 32 phrases with plain-English replacements,
+- **The lexicon.** 142 words and 51 phrases with plain-English replacements,
   capitalisation preserved and URLs untouched. It lives in `slop.json`.
 
 What gets flagged instead of fixed: 11 structural tells, including "It's not
@@ -142,7 +142,7 @@ survived byte-for-byte before anything is sent.
 ```
 skills/human/humanize.py         the three cleaning passes
 skills/human/detect.py           the five-check panel
-skills/human/slop.json           the lexicon: 81 words, 32 phrases, 17 invisible
+skills/human/slop.json           the lexicon: 142 words, 51 phrases, 17 invisible
                                  classes, 11 typographic swaps, 11 structures
 skills/support-reply/SKILL.md    investigation into a customer reply
 skills/internal-note/SKILL.md    investigation into a note for the team

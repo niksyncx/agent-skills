@@ -23,7 +23,7 @@ python3 detect.py before.txt after.txt         # prove the delta
 pbpaste | python3 humanize.py - --report       # nothing touches disk
 ```
 
-Both read `slop.json`, which is the lexicon: 100+ stock words and phrases with
+Both read `slop.json`, which is the lexicon: 193 stock words and phrases with
 plain-English replacements, 17 invisible character classes, 11 typographic
 substitutions, and 11 structural tells.
 
