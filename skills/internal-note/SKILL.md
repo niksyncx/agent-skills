@@ -49,9 +49,9 @@ and that is the lie that costs days.
 Tell them before anything else.
 
 **2. Split proven from assumed, always.** This is the entire point of the
-note. The worst failure in this repo's history was a plausible sentence sent
-as fact. Internally it is cheaper but the mechanism is identical: someone
-downstream builds on your guess because you wrote it like a finding.
+note. A guess written like a finding is how a note does damage: someone
+downstream builds on it, and nobody goes back to check whether the bullet
+had a source.
 
 **3. One line per fact.** If a bullet needs a second sentence, it is two
 bullets or it is not a fact yet.
@@ -113,38 +113,3 @@ Two things that will happen and are fine:
 - Does every `Next` item have a name on it?
 - Store domains and merchant names masked?
 - Field names and error strings intact after the humanize pass?
-
-## Worked example
-
-Identifiers below are masked. Profile IDs, SKUs, catalogue sizes, store and
-supplier names are illustrative, the shape is what matters.
-
-> **Status:** cause found, fix not deployed. Blocked on confirming the second
-> profile is unaffected.
->
-> **Found:**
-> - Feed 100200 groups on `handle`, `match_field` is
->   `product_title`. The merge never matches, so every group trips the
->   group-level existing check.
-> - The "887 already existing" counter reports products, not variants. Label
->   is wrong on our side.
->
-> **Proven:**
-> - Read the profile config directly, both values above.
-> - Run 1204: 3 of 4,812 rows eligible. The rest excluded by the merchant's
->   own `BO-`/`LO-` filter or sitting at zero quantity.
-> - Checked all 4,310 variants in store-A, none of the three are present.
->
-> **Assumed:**
-> - Feed 100201 uses the same grouping and is probably affected too. Not
->   opened yet. Reading its config confirms or kills this.
->
-> **Next:**
-> - Switch 100200 to group by `product_title`, then rerun. Nik, today.
-> - Open 100201 and check `match_field`. Nik, before the fix
->   ships.
-> - Fix the counter label. Backlog, nobody yet.
-
-Two causes, each with its source. The unopened profile sits in `Assumed` with
-the exact thing that would settle it. Every action has a name except the one
-that honestly does not, and that is said out loud rather than hidden.

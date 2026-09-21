@@ -150,10 +150,6 @@ names, SKUs, profile IDs and run IDs. A draft file on disk gets copied, synced
 and backed up. Pipe it. Mask the identifying values before a file exists, not
 after.
 
-**The worked examples are masked.** Store and supplier names, profile IDs, SKUs
-and catalogue sizes in the skill files are illustrative. The shape is the
-lesson, the values are not real.
-
 **Read the diff, do not trust the output.** The lexical pass cannot tell a field
 name from a word. Check that every identifier, error string and column name
 survived byte-for-byte before anything is sent.

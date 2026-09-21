@@ -23,11 +23,7 @@ Long is not thorough. Long reads as evasive, which is what they are already angr
 
 **1. Cause in sentence one.** No "thanks for your patience", no "I've escalated this", no restating the question.
 
-**2. Never explain a mechanism you have not verified.** The worst failure in this repo's history was a confident generic answer, sent mid-escalation:
-
-> "Shopify store titles do not affect SKU matching directly, matching happens at the variant identifier level."
-
-Titles were the entire cause. Four days and the customer's trust. "Checking that now" always beats a plausible sentence.
+**2. Never explain a mechanism you have not verified.** A generic answer that sounds right is the expensive failure in this work. It ships mid-escalation, the customer acts on it, and the real cause keeps running for days. "Checking that now" always beats a plausible sentence.
 
 **3. No internal vocabulary.** `row_group` becomes "the setting that groups rows into one product". `dedupe_check` becomes "the step that checks whether the product is already in your store". Names the customer can see in the app are fine, quote those exactly.
 
@@ -80,7 +76,7 @@ pbpaste | python3 humanize.py - --report
 
 A finished reply holds store names, SKUs, profile IDs and run IDs. That is customer data, and a draft file on disk gets copied, synced and backed up. Stdin leaves nothing behind. If you need a before/after score, mask the identifiers first.
 
-**What it will actually find.** Em dashes, and usually nothing else. A reply written to the rules above scores well before you touch it: rule 6 maxes SPECIFICITY, and writing "your feed" instead of "the user's feed" maxes VOICE. The worked example below went `60.9 REVIEW -> 84.5 PASS` on the em dash pass alone, with zero structural flags.
+**What it will actually find.** Em dashes, and usually nothing else. A reply written to the rules above scores well before you touch it: rule 6 maxes SPECIFICITY, and writing "your feed" instead of "the user's feed" maxes VOICE. Expect the em dash pass to carry most of the gain on its own.
 
 **Read the diff, do not trust the output.** The lexical pass does not know it is inside a quoted vendor string or a SKU. Check that every identifier, error string and field name survived byte-for-byte before you send.
 
@@ -95,30 +91,3 @@ A finished reply holds store names, SKUs, profile IDs and run IDs. That is custo
 - Every question answered, none given its own paragraph?
 - Verification real, or marked as pending?
 - Piped through `humanize.py`, diff read, zero em dashes left?
-
-## Worked example, profile 100200, store-A
-
-Identifiers below are masked. Profile IDs, SKUs, catalogue sizes, store and
-supplier names are illustrative, the shape is what matters.
-
-Found: grouping keyed on `handle` while `match_field` was `product_title`, so the merge never matched and every group tripped the group-level existing check. 3 eligible SKUs. One blocked by a store-side rename, one duplicated by the supplier. Customer asked nine questions.
-
-The reply, as it went out after the humanize pass:
-
-> Your Add feed grouped supplier rows by the supplier's handle, but your merge setting matches on product title, so every new variant was treated as already existing and skipped.
->
-> **Fixed:** feed 100200 now groups by Product Title. Live now. Your filter, prices, product statuses and feed 100201 are untouched.
->
-> 3 of your 4,812 rows were genuinely new, the three you sent us. Your audit was right. The ~430 others are excluded by your own BO-/LO- filter or sit at zero quantity. Those are working as configured.
->
-> **Still needs action:**
-> - `LO-03-****-00016-00`, this product was renamed in your store. supplier-B calls it *Harbour Leather Business Briefcase / Laptop Case 16" with Case*; your store says *Harbour 16-Inch Leather Laptop Case*. Rename it back, or ask us to map the title.
-> - `LO-02-****-042MM-00`, supplier-B sends one SKU for two sizes (qty 14 and 11). They need a separate SKU for 40/41/42mm.
->
-> **Your other questions:** none of the three are in your store, we checked all 4,310 variants. All three have stock, so "skip zero quantity" isn't involved. Your filter evaluated correctly and passed all three. The "887 already existing" figure counts products, not variants; that label is wrong on our side.
->
-> **Verified:** run [ID] merged [variant]. Next daily run 08:30.
-
-Nine questions, one paragraph. The mechanism gets one sentence, he can ask for more. Three causes split by owner. The untouched feed named explicitly, because that was his real fear.
-
-Scored 84.5 PASS. Five em dashes came out, nothing else changed, and every SKU survived the pass intact.
