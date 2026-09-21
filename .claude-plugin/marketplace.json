@@ -1,0 +1,16 @@
+{
+  "name": "syncx",
+  "description": "Syncx internal Claude Code plugins.",
+  "owner": {
+    "name": "Syncx"
+  },
+  "plugins": [
+    {
+      "name": "syncx",
+      "source": "./",
+      "description": "Humanize and score any draft before it reaches a customer, a teammate or the public.",
+      "category": "productivity",
+      "keywords": ["writing", "humanize", "em-dash", "ai-detection", "support"]
+    }
+  ]
+}
