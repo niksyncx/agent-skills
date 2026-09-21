@@ -322,6 +322,21 @@
       "family": "connectives"
     },
     {
+      "find": "secret weapon",
+      "replace": "advantage",
+      "family": "nouns"
+    },
+    {
+      "find": "powerful tool",
+      "replace": "tool",
+      "family": "nouns"
+    },
+    {
+      "find": "perfect storm",
+      "replace": "pile-up",
+      "family": "nouns"
+    },
+    {
       "find": "cutting-edge",
       "replace": "new",
       "family": "adjectives"
@@ -387,6 +402,26 @@
       "family": "adjectives"
     },
     {
+      "find": "nailing down",
+      "replace": "settling",
+      "family": "verbs"
+    },
+    {
+      "find": "mind blowing",
+      "replace": "surprising",
+      "family": "adjectives"
+    },
+    {
+      "find": "game changer",
+      "replace": "big change",
+      "family": "nouns"
+    },
+    {
+      "find": "secret sauce",
+      "replace": "trick",
+      "family": "nouns"
+    },
+    {
       "find": "underscores",
       "replace": "shows",
       "family": "verbs"
@@ -440,6 +475,26 @@
       "find": "undoubtedly",
       "replace": "clearly",
       "family": "connectives"
+    },
+    {
+      "find": "supercharge",
+      "replace": "speed up",
+      "family": "verbs"
+    },
+    {
+      "find": "turbocharge",
+      "replace": "speed up",
+      "family": "verbs"
+    },
+    {
+      "find": "imaginative",
+      "replace": "original",
+      "family": "adjectives"
+    },
+    {
+      "find": "trailblazer",
+      "replace": "first",
+      "family": "nouns"
     },
     {
       "find": "delve into",
@@ -537,6 +592,31 @@
       "family": "adjectives"
     },
     {
+      "find": "entrusting",
+      "replace": "giving",
+      "family": "verbs"
+    },
+    {
+      "find": "formidable",
+      "replace": "strong",
+      "family": "adjectives"
+    },
+    {
+      "find": "fast-paced",
+      "replace": "busy",
+      "family": "adjectives"
+    },
+    {
+      "find": "brain dump",
+      "replace": "notes",
+      "family": "nouns"
+    },
+    {
+      "find": "hard truth",
+      "replace": "problem",
+      "family": "nouns"
+    },
+    {
       "find": "deep dive",
       "replace": "breakdown",
       "family": "nouns"
@@ -600,6 +680,41 @@
       "find": "pervasive",
       "replace": "widespread",
       "family": "adjectives"
+    },
+    {
+      "find": "captivate",
+      "replace": "hold attention",
+      "family": "verbs"
+    },
+    {
+      "find": "skyrocket",
+      "replace": "jump",
+      "family": "verbs"
+    },
+    {
+      "find": "marvelous",
+      "replace": "good",
+      "family": "adjectives"
+    },
+    {
+      "find": "fantastic",
+      "replace": "good",
+      "family": "adjectives"
+    },
+    {
+      "find": "tightrope",
+      "replace": "balance",
+      "family": "nouns"
+    },
+    {
+      "find": "punchline",
+      "replace": "point",
+      "family": "nouns"
+    },
+    {
+      "find": "real deal",
+      "replace": "genuine",
+      "family": "nouns"
     },
     {
       "find": "leverage",
@@ -680,6 +795,11 @@
       "find": "manifold",
       "replace": "many",
       "family": "adjectives"
+    },
+    {
+      "find": "catapult",
+      "replace": "push",
+      "family": "verbs"
     },
     {
       "find": "utilize",
@@ -767,6 +887,26 @@
       "family": "adjectives"
     },
     {
+      "find": "bombard",
+      "replace": "flood",
+      "family": "verbs"
+    },
+    {
+      "find": "sifting",
+      "replace": "sorting",
+      "family": "verbs"
+    },
+    {
+      "find": "stellar",
+      "replace": "very good",
+      "family": "adjectives"
+    },
+    {
+      "find": "scrappy",
+      "replace": "rough",
+      "family": "adjectives"
+    },
+    {
       "find": "foster",
       "replace": "build",
       "family": "verbs"
@@ -822,6 +962,21 @@
       "family": "connectives"
     },
     {
+      "find": "unveil",
+      "replace": "show",
+      "family": "verbs"
+    },
+    {
+      "find": "nugget",
+      "replace": "detail",
+      "family": "nouns"
+    },
+    {
+      "find": "kicker",
+      "replace": "catch",
+      "family": "nouns"
+    },
+    {
       "find": "delve",
       "replace": "look",
       "family": "verbs"
@@ -849,6 +1004,11 @@
     {
       "find": "foray",
       "replace": "attempt",
+      "family": "nouns"
+    },
+    {
+      "find": "fluff",
+      "replace": "padding",
       "family": "nouns"
     },
     {
@@ -939,6 +1099,11 @@
       "family": "openers"
     },
     {
+      "find": "in today's modern age",
+      "replace": "right now",
+      "family": "openers"
+    },
+    {
       "find": "we've all been there",
       "replace": "",
       "family": "openers"
@@ -957,6 +1122,16 @@
       "find": "transforming the way",
       "replace": "changing how",
       "family": "closers"
+    },
+    {
+      "find": "welcome to the world",
+      "replace": "this is",
+      "family": "openers"
+    },
+    {
+      "find": "elephant in the room",
+      "replace": "obvious problem",
+      "family": "nouns"
     },
     {
       "find": "it's no secret that",
@@ -979,6 +1154,11 @@
       "family": "closers"
     },
     {
+      "find": "comes to the rescue",
+      "replace": "fixes it",
+      "family": "closers"
+    },
+    {
       "find": "the future is here",
       "replace": "",
       "family": "closers"
@@ -996,6 +1176,11 @@
     {
       "find": "driving innovation",
       "replace": "making new things",
+      "family": "closers"
+    },
+    {
+      "find": "chaos into clarity",
+      "replace": "sorted out",
       "family": "closers"
     },
     {
@@ -1034,6 +1219,21 @@
       "family": "closers"
     },
     {
+      "find": "fast paced world",
+      "replace": "busy work",
+      "family": "openers"
+    },
+    {
+      "find": "here's the truth",
+      "replace": "the point is",
+      "family": "openers"
+    },
+    {
+      "find": "moves the needle",
+      "replace": "makes a difference",
+      "family": "closers"
+    },
+    {
       "find": "move the needle",
       "replace": "make a difference",
       "family": "closers"
@@ -1059,6 +1259,16 @@
       "family": "closers"
     },
     {
+      "find": "in the world of",
+      "replace": "in",
+      "family": "openers"
+    },
+    {
+      "find": "here's the deal",
+      "replace": "the point is",
+      "family": "openers"
+    },
+    {
       "find": "a testament to",
       "replace": "proof of",
       "family": "nouns"
@@ -1071,6 +1281,21 @@
     {
       "find": "the road ahead",
       "replace": "what comes next",
+      "family": "closers"
+    },
+    {
+      "find": "in today's era",
+      "replace": "right now",
+      "family": "openers"
+    },
+    {
+      "find": "hits different",
+      "replace": "stands out",
+      "family": "closers"
+    },
+    {
+      "find": "break the bank",
+      "replace": "cost much",
       "family": "closers"
     },
     {
@@ -1094,6 +1319,36 @@
       "family": "closers"
     },
     {
+      "find": "in the era of",
+      "replace": "in",
+      "family": "openers"
+    },
+    {
+      "find": "digital world",
+      "replace": "now",
+      "family": "openers"
+    },
+    {
+      "find": "ever wondered",
+      "replace": "you may have wondered",
+      "family": "openers"
+    },
+    {
+      "find": "let's dive in",
+      "replace": "here goes",
+      "family": "openers"
+    },
+    {
+      "find": "saves the day",
+      "replace": "fixes it",
+      "family": "closers"
+    },
+    {
+      "find": "miss the mark",
+      "replace": "get it wrong",
+      "family": "closers"
+    },
+    {
       "find": "picture this",
       "replace": "",
       "family": "openers"
@@ -1104,13 +1359,58 @@
       "family": "closers"
     },
     {
+      "find": "is all about",
+      "replace": "is",
+      "family": "closers"
+    },
+    {
       "find": "in a sea of",
       "replace": "among",
       "family": "openers"
     },
     {
+      "find": "digital age",
+      "replace": "now",
+      "family": "openers"
+    },
+    {
+      "find": "hits a wall",
+      "replace": "stops",
+      "family": "closers"
+    },
+    {
+      "find": "in a world",
+      "replace": "where",
+      "family": "openers"
+    },
+    {
+      "find": "falls flat",
+      "replace": "does not work",
+      "family": "closers"
+    },
+    {
+      "find": "stay tuned",
+      "replace": "more soon",
+      "family": "closers"
+    },
+    {
+      "find": "sneak peek",
+      "replace": "preview",
+      "family": "closers"
+    },
+    {
       "find": "buckle up",
       "replace": "",
+      "family": "openers"
+    },
+    {
+      "find": "hits home",
+      "replace": "lands",
+      "family": "closers"
+    },
+    {
+      "find": "sea of",
+      "replace": "many",
       "family": "openers"
     }
   ],
@@ -1180,6 +1480,30 @@
       "regex": "(?i)\\b(?:agree\\?|thoughts\\?|who else\\b|am i wrong\\?)\\s*$",
       "name": "Reflex engagement bait",
       "fix": "Ask a question only you could ask, about the specific thing above it."
+    },
+    {
+      "id": "not-because",
+      "regex": "(?i)\\bnot because\\b[^.!?\\n]{2,80}[.,]\\s*but because\\b",
+      "name": "\"Not because X. But because Y.\"",
+      "fix": "Say the reason once. Drop the rejected half."
+    },
+    {
+      "id": "not-by-doing",
+      "regex": "(?i)\\bnot by\\b[^.!?\\n]{2,80},\\s*but by\\b",
+      "name": "\"Not by doing X, but by doing Y.\"",
+      "fix": "State what you did. The contrast adds nothing."
+    },
+    {
+      "id": "no-x-no-y",
+      "regex": "(?i)\\bno [a-z]+\\.\\s*no [a-z]+\\.\\s*just\\b",
+      "name": "\"No X. No Y. Just Z.\"",
+      "fix": "Three fragments doing one sentence's work. Write the sentence."
+    },
+    {
+      "id": "and-the-x",
+      "regex": "(?i)\\band the [a-z ]{2,20}\\?\\s*[A-Z]",
+      "name": "\"And the X? Y.\"",
+      "fix": "Rhetorical question standing in for a claim. Make the claim."
     }
   ]
 }
