@@ -62,12 +62,20 @@ Verified: [run ID, what it did.] Next run [time].
 
 Drop empty sections. Never pad one to look thorough.
 
-## Run it through li-human before sending
+## When the fix is a code change
 
-Pipe it. Never write the draft to a file:
+If the customer's answer depends on a diff, PR or branch we shipped, use
+`explain-change` to understand it first, then write the reply from that. The
+explanation is for you, not for them: rule 1 still gets one sentence of cause,
+and the walkthrough stays out of the reply unless they ask for it.
+
+## Run it through human before sending
+
+Pipe it. Never write the draft to a file. Paths are relative to the `human`
+skill's base directory, which you get when that skill is invoked:
 
 ```bash
-pbpaste | python3 ~/.claude/skills/human/humanize.py - --report
+pbpaste | python3 humanize.py - --report
 ```
 
 A finished reply holds store names, SKUs, profile IDs and run IDs. That is customer data, and a draft file on disk gets copied, synced and backed up. Stdin leaves nothing behind. If you need a before/after score, mask the identifiers first.
