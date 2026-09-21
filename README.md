@@ -10,7 +10,7 @@ write it.
 
 And one is the humanizer, which is the reason the other three are usable. It
 strips the em dashes, the stock vocabulary and the invisible watermark
-characters out of a draft, then scores what is left against a five-check panel
+characters out of a draft, then scores what is left against a six-check panel
 before anyone sees it.
 
 Nothing gets sent until you say so. These skills draft. You send.
@@ -104,7 +104,7 @@ no API key. They run on your machine, on your text, and nothing is uploaded.
 
 ```bash
 python3 humanize.py draft.txt --report      # clean it, show every change
-python3 detect.py draft.txt                  # score it, five checks
+python3 detect.py draft.txt                  # score it, six checks
 python3 detect.py before.txt after.txt       # prove the delta
 pbpaste | python3 humanize.py - --report     # nothing touches disk
 ```
@@ -128,7 +128,7 @@ just X, it's Y", "Not because X. But because Y.", rule-of-three triads and
 one-word rhetorical questions. Changing the shape of a sentence needs judgement, so those come
 back for a rewrite rather than getting mangled by a regex.
 
-The five checks, scored 0-100, higher is more human:
+The six checks, scored 0-100, higher is more human:
 
 | check | what it measures |
 |---|---|
@@ -136,7 +136,8 @@ The five checks, scored 0-100, higher is more human:
 | SPECIFICITY | numbers, names and concrete markers per 100 words |
 | SLOP DENSITY | lexicon hits per 100 words |
 | FINGERPRINT | invisible characters, em dashes, curly quotes |
-| VOICE | contractions, person, structural tells |
+| VOICE | contractions and person per 100 words |
+| STRUCTURE | structural tells, bullets of equal length |
 
 Run against a deliberately terrible draft:
 
@@ -145,15 +146,20 @@ Run against a deliberately terrible draft:
   SPECIFICITY   ........................   0.0    0 concrete markers
   SLOP DENSITY  ........................   0.0    12 stock terms, 24.5 per 100 words
   FINGERPRINT   ##########..............  43.1    1 em dash
-  VOICE         ####################....  84.0    1 structural tell [not-just]
+  VOICE         #####################...  86.6    6.1 contractions per 100 words
+  STRUCTURE     ###################.....  78.0    1 structural tell [not-just]
   --------------------------------------------------------------
-  HUMAN SCORE   ######..................  23.3   FLAGGED
+  HUMAN SCORE   #######.................  27.5   FLAGGED
 ```
+
+Note VOICE at 86.6 on a draft that is otherwise appalling. It is chatty, so it
+scores well on the one thing VOICE measures. The mean cannot hide the two zeros
+because the weakest check carries 40% of the verdict on its own.
 
 After `humanize.py`, with the flagged structure still unrewritten:
 
 ```
-  23.3 FLAGGED  ->  40.8 FLAGGED   (+17.5)
+  27.5 FLAGGED  ->  42.9 FLAGGED   (+15.4)
 ```
 
 The rest of the distance is the part the script deliberately leaves to you. It
@@ -161,7 +167,7 @@ cannot invent the number that would fix SPECIFICITY, and it will not pretend to.
 
 ## The fine print, which is the honest part
 
-**The five checks are local heuristics, not detector APIs.** They are modelled
+**The six checks are local heuristics, not detector APIs.** They are modelled
 on the signals public detectors key on and they run entirely on your machine.
 They are not GPTZero, Originality, Copyleaks or Turnitin, they do not call those
 services, and they cannot promise those verdicts. Fixing what they measure tends
@@ -169,7 +175,7 @@ to move those numbers, because they measure the same underlying things. That is
 the whole claim.
 
 **Short text scores badly and that is expected.** Under four sentences, three of
-the five checks return `too short to judge` and flatten to 50, which sits below
+the checks return `too short to judge` and flatten to 50, which sits below
 the floor. A two-line answer can never reach PASS no matter how good it is. Read
 the FINGERPRINT line and ignore the verdict.
 
@@ -191,7 +197,7 @@ survived byte-for-byte before anything is sent.
 
 ```
 skills/human/humanize.py         the three cleaning passes
-skills/human/detect.py           the five-check panel
+skills/human/detect.py           the six-check panel
 skills/human/slop.json           the lexicon: 174 words, 54 phrases, 17 invisible
                                  classes, 11 typographic swaps, 11 structures
 skills/support-reply/SKILL.md    investigation into a customer reply

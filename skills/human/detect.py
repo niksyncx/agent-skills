@@ -119,13 +119,30 @@ def check_fingerprint(text):
 
 
 def check_voice(text, lex):
-    """Contractions, person, and the shapes models default to."""
+    """Contractions and person. Does a reader hear someone talking?
+
+    Prose only. Reference docs, tables and command listings score badly here
+    by nature, which is why the shapes moved out to check_structure: those
+    read the same whatever the text type is.
+    """
     w = words(text)
     if len(w) < 25:
         return 50.0, "too short to judge"
     per100 = 100 / len(w)
     contractions = len(CONTRACTIONS.findall(text)) * per100
     person = len(PRONOUNS.findall(text)) * per100
+    score = (scale(contractions, human=3.0, machine=0.0) * 0.5
+             + scale(person, human=8.0, machine=1.0) * 0.5)
+    detail = (f"{contractions:.1f} contractions, {person:.1f} personal pronouns "
+              f"per 100 words")
+    return clamp(score), detail
+
+
+def check_structure(text, lex):
+    """The shapes models default to, and bullets of suspiciously equal length.
+
+    No length guard: a tell is a tell in one sentence or in fifty.
+    """
     tells = 0
     names = []
     for s in lex["structures"]:
@@ -136,22 +153,18 @@ def check_voice(text, lex):
         if n:
             tells += n
             names.append(s["id"])
+    score = clamp(100 - tells * 22)
     bullets = [len(b.split()) for b in re.findall(r"(?m)^\s*[-*•]\s+(.+)$", text)]
-    uniform = (len(bullets) >= 3 and statistics.pstdev(bullets) < 1.6)
-    score = (scale(contractions, human=3.0, machine=0.0) * 0.35
-             + scale(person, human=8.0, machine=1.0) * 0.35
-             + clamp(100 - tells * 22) * 0.30)
-    if uniform:
-        score -= 12
+    if len(bullets) >= 3 and statistics.pstdev(bullets) < 1.6:
+        score = clamp(score - 12)
         names.append("uniform-bullets")
-    detail = (f"{contractions:.1f} contractions, {person:.1f} personal pronouns "
-              f"per 100 words, {tells} structural tell(s)")
+    detail = f"{tells} structural tell(s)"
     if names:
         detail += " [" + ", ".join(names[:4]) + "]"
-    return clamp(score), detail
+    return score, detail
 
-
-CHECKS = ["BURSTINESS", "SPECIFICITY", "SLOP DENSITY", "FINGERPRINT", "VOICE"]
+CHECKS = ["BURSTINESS", "SPECIFICITY", "SLOP DENSITY", "FINGERPRINT", "VOICE",
+          "STRUCTURE"]
 
 
 def run(text, lex):
@@ -161,6 +174,7 @@ def run(text, lex):
     results["SLOP DENSITY"] = check_slop(text, lex)
     results["FINGERPRINT"] = check_fingerprint(text)
     results["VOICE"] = check_voice(text, lex)
+    results["STRUCTURE"] = check_structure(text, lex)
     scores = [results[c][0] for c in CHECKS]
     # The weakest check drags the verdict: a detector only needs one signal.
     overall = statistics.mean(scores) * 0.6 + min(scores) * 0.4

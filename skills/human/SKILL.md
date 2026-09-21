@@ -2,7 +2,7 @@
 name: human
 description: >-
   Strip the machine fingerprint out of any draft - em dashes, AI slop words,
-  invisible watermark characters - and score it against a five-check detection
+  invisible watermark characters - and score it against a six-check detection
   panel before it goes out. Use whenever text needs to sound human, when the
   user says humanize, "does this sound like AI", "remove the em dashes",
   "de-slop this", "will this get flagged", and before any Syncx customer reply,
@@ -18,7 +18,7 @@ is given to you when the skill is invoked.
 
 ```bash
 python3 humanize.py draft.txt --report        # clean it, show what changed
-python3 detect.py draft.txt                    # score it, five checks
+python3 detect.py draft.txt                    # score it, six checks
 python3 detect.py before.txt after.txt         # prove the delta
 pbpaste | python3 humanize.py - --report       # nothing touches disk
 ```
@@ -88,9 +88,9 @@ That list is your job. Rewrite each flagged line by hand, keeping the meaning,
 then re-run `detect.py`. This is the part that moves the score from REVIEW to
 PASS, and it is the part a script cannot do.
 
-## The five checks
+## The six checks
 
-`detect.py` scores five signals 0-100, higher is more human:
+`detect.py` scores six signals 0-100, higher is more human:
 
 | check | what it measures | machine looks like |
 | --- | --- | --- |
@@ -98,11 +98,17 @@ PASS, and it is the part a script cannot do.
 | SPECIFICITY | numbers, names, concrete markers per 100 words | abstract nouns, no figures |
 | SLOP DENSITY | lexicon hits per 100 words | stock vocabulary |
 | FINGERPRINT | invisible chars, em dashes, curly quotes per 1k chars | typographically perfect |
-| VOICE | contractions, person, structural tells | no contractions, staged reveals |
+| VOICE | contractions and person per 100 words | no contractions, third person |
+| STRUCTURE | structural tells, bullets of equal length | staged reveals, templated shapes |
 
 The verdict weights the mean at 60% and the **weakest single check** at 40%,
 because a detector only needs one signal to fire. PASS needs an overall of 70+
 with no check below 55.
+
+VOICE and STRUCTURE were one check until they were split apart. VOICE now reads
+prose only, and STRUCTURE reads shape, which works on any text type. A document
+of tables and command blocks can score 100 on STRUCTURE and near zero on VOICE,
+and both numbers are telling the truth about different things.
 
 Technical writing fails VOICE first, almost every time. Profile numbers and
 vendor names carry SPECIFICITY for free, so the score you will be fixing is
@@ -111,7 +117,8 @@ of "the user will observe" and most of the gap closes.
 
 **Short drafts cannot pass.** Under four sentences, BURSTINESS, SPECIFICITY
 and VOICE all return `too short to judge` and score a flat 50, which sits
-below the 55 floor. A 22-word reply tops out at 62.0 REVIEW no matter how
+below the 55 floor. STRUCTURE has no length guard and will usually read 100 on
+a short draft, which lifts the mean but cannot lift the floor. A 22-word reply tops out at 62.0 REVIEW no matter how
 well written it is. On anything short, read the FINGERPRINT line and ignore
 the verdict.
 

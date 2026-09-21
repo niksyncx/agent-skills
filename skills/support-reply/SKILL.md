@@ -80,7 +80,7 @@ A finished reply holds store names, SKUs, profile IDs and run IDs. That is custo
 
 **Read the diff, do not trust the output.** The lexical pass does not know it is inside a quoted vendor string or a SKU. Check that every identifier, error string and field name survived byte-for-byte before you send.
 
-**Ignore the verdict on a short reply.** Under four sentences, three of the five checks return `too short to judge` and score a flat 50, which is below the 55 floor, so a two-line answer can never reach PASS no matter how good it is. A 22-word reply tops out at 62.0 REVIEW. On anything short, read the FINGERPRINT line and ignore the rest.
+**Ignore the verdict on a short reply.** Under four sentences, three of the checks return `too short to judge` and score a flat 50, which is below the 55 floor, so a two-line answer can never reach PASS no matter how good it is. A 22-word reply tops out at 62.0 REVIEW. On anything short, read the FINGERPRINT line and ignore the rest.
 
 ## Before sending
 

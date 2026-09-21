@@ -99,7 +99,7 @@ the draft to a file.
 
 Two things that will happen and are fine:
 
-- **The score will be low.** Bullets are short, and three of the five checks
+- **The score will be low.** Bullets are short, and three of the checks
   return `too short to judge` on fragments. Read the FINGERPRINT line, ignore
   the verdict.
 - **The lexical pass does not know a field name from a word.** Check that
