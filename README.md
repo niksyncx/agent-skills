@@ -34,6 +34,23 @@ Or as a plugin, in an interactive `claude` terminal:
 Claude Code only, for now. The skills are written against its plugin and skill
 loading, and nothing else has been tested.
 
+## Updating
+
+Nothing updates on its own. An install pins one commit and stays there until
+you move it:
+
+```bash
+claude plugin marketplace update syncx-agent-skills
+claude plugin update syncx@syncx-agent-skills
+```
+
+Marketplace first, that refetches the catalogue. The second command moves the
+pinned commit forward and re-caches. Restart Claude Code to apply.
+
+The paste-the-URL route has no update path, because it is not a defined install
+path. Use it to try the skills, use the plugin route if you want to keep them
+current.
+
 ## The four
 
 | command | what it does |
