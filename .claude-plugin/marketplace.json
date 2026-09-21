@@ -8,9 +8,16 @@
     {
       "name": "syncx",
       "source": "./",
-      "description": "Humanize and score any draft before it reaches a customer, a teammate or the public.",
+      "description": "Draft the customer reply, then strip the machine fingerprint out of it before it goes out.",
       "category": "productivity",
-      "keywords": ["writing", "humanize", "em-dash", "ai-detection", "support"]
+      "keywords": [
+        "writing",
+        "humanize",
+        "em-dash",
+        "ai-detection",
+        "support",
+        "support-reply"
+      ]
     }
   ]
 }

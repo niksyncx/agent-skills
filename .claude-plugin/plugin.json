@@ -1,9 +1,17 @@
 {
   "name": "syncx",
   "version": "1.0.0",
-  "description": "Syncx writing tooling for Claude Code. Strips the machine fingerprint out of customer replies, investigation write-ups, release notes and docs, then scores what is left against a five-check panel.",
+  "description": "Syncx writing tooling for Claude Code. support-reply turns a finished Stock-Sync investigation into a reply the customer can act on. human strips the machine fingerprint out of any draft and scores what is left against a five-check panel.",
   "author": {
     "name": "Syncx"
   },
-  "keywords": ["writing", "humanize", "em-dash", "ai-detection", "support", "stock-sync"]
+  "keywords": [
+    "writing",
+    "humanize",
+    "em-dash",
+    "ai-detection",
+    "support",
+    "stock-sync",
+    "support-reply"
+  ]
 }
