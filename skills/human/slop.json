@@ -1044,19 +1044,9 @@
       "family": "closers"
     },
     {
-      "find": "i am excited to announce",
-      "replace": "",
-      "family": "openers"
-    },
-    {
       "find": "navigating the landscape",
       "replace": "working through this",
       "family": "openers"
-    },
-    {
-      "find": "what are your thoughts?",
-      "replace": "",
-      "family": "closers"
     },
     {
       "find": "it is important to note",
@@ -1074,18 +1064,8 @@
       "family": "openers"
     },
     {
-      "find": "had the opportunity to",
-      "replace": "got to",
-      "family": "connectives"
-    },
-    {
       "find": "it's worth noting that",
       "replace": "note that",
-      "family": "openers"
-    },
-    {
-      "find": "imagine a world where",
-      "replace": "imagine if",
       "family": "openers"
     },
     {
@@ -1094,24 +1074,9 @@
       "family": "closers"
     },
     {
-      "find": "i'm thrilled to share",
-      "replace": "",
-      "family": "openers"
-    },
-    {
       "find": "in today's modern age",
       "replace": "right now",
       "family": "openers"
-    },
-    {
-      "find": "we've all been there",
-      "replace": "",
-      "family": "openers"
-    },
-    {
-      "find": "drop a comment below",
-      "replace": "",
-      "family": "closers"
     },
     {
       "find": "cannot be overstated",
@@ -1139,34 +1104,9 @@
       "family": "openers"
     },
     {
-      "find": "the choice is yours",
-      "replace": "",
-      "family": "closers"
-    },
-    {
-      "find": "without further ado",
-      "replace": "",
-      "family": "openers"
-    },
-    {
-      "find": "save this for later",
-      "replace": "",
-      "family": "closers"
-    },
-    {
       "find": "comes to the rescue",
       "replace": "fixes it",
       "family": "closers"
-    },
-    {
-      "find": "the future is here",
-      "replace": "",
-      "family": "closers"
-    },
-    {
-      "find": "the harsh truth is",
-      "replace": "",
-      "family": "openers"
     },
     {
       "find": "it is worth noting",
@@ -1191,21 +1131,6 @@
     {
       "find": "foster innovation",
       "replace": "make new things",
-      "family": "closers"
-    },
-    {
-      "find": "here's the thing",
-      "replace": "",
-      "family": "openers"
-    },
-    {
-      "find": "let that sink in",
-      "replace": "",
-      "family": "closers"
-    },
-    {
-      "find": "food for thought",
-      "replace": "",
       "family": "closers"
     },
     {
@@ -1239,16 +1164,6 @@
       "family": "closers"
     },
     {
-      "find": "i am humbled to",
-      "replace": "",
-      "family": "openers"
-    },
-    {
-      "find": "read that again",
-      "replace": "",
-      "family": "closers"
-    },
-    {
       "find": "in the realm of",
       "replace": "in",
       "family": "openers"
@@ -1274,11 +1189,6 @@
       "family": "nouns"
     },
     {
-      "find": "you're welcome",
-      "replace": "",
-      "family": "closers"
-    },
-    {
       "find": "the road ahead",
       "replace": "what comes next",
       "family": "closers"
@@ -1289,33 +1199,13 @@
       "family": "openers"
     },
     {
-      "find": "hits different",
-      "replace": "stands out",
-      "family": "closers"
-    },
-    {
       "find": "break the bank",
       "replace": "cost much",
       "family": "closers"
     },
     {
-      "find": "let's face it",
-      "replace": "",
-      "family": "openers"
-    },
-    {
       "find": "needle-moving",
       "replace": "useful",
-      "family": "closers"
-    },
-    {
-      "find": "spoiler alert",
-      "replace": "",
-      "family": "openers"
-    },
-    {
-      "find": "who's with me",
-      "replace": "",
       "family": "closers"
     },
     {
@@ -1347,11 +1237,6 @@
       "find": "miss the mark",
       "replace": "get it wrong",
       "family": "closers"
-    },
-    {
-      "find": "picture this",
-      "replace": "",
-      "family": "openers"
     },
     {
       "find": "the power of",
@@ -1389,19 +1274,9 @@
       "family": "closers"
     },
     {
-      "find": "stay tuned",
-      "replace": "more soon",
-      "family": "closers"
-    },
-    {
       "find": "sneak peek",
       "replace": "preview",
       "family": "closers"
-    },
-    {
-      "find": "buckle up",
-      "replace": "",
-      "family": "openers"
     },
     {
       "find": "hits home",
@@ -1440,28 +1315,10 @@
       "fix": "Answer it inline instead of staging a reveal."
     },
     {
-      "id": "heres-what",
-      "regex": "(?i)\\bhere'?s what (?:i|we) learned\\b",
-      "name": "\"Here's what I learned\"",
-      "fix": "State the lesson. Skip the announcement."
-    },
-    {
       "id": "triad",
       "regex": "(?i)\\b\\w+, \\w+, and \\w+\\.",
       "name": "Rule-of-three triad",
       "fix": "Two items or four. Three is the model's default rhythm."
-    },
-    {
-      "id": "rocket",
-      "regex": "[\\U0001F680\\U0001F525\\U0001F4A1\\u2728\\U0001F3AF]",
-      "name": "Rocket / fire / bulb / sparkle / dart emoji",
-      "fix": "One emoji max, and not one of these five."
-    },
-    {
-      "id": "hashtag-wall",
-      "regex": "(?:#\\w+[ \\t]*){5,}",
-      "name": "Hashtag wall (5+)",
-      "fix": "Three hashtags at most. The wall reads as reach-chasing."
     },
     {
       "id": "as-an-ai",
@@ -1474,12 +1331,6 @@
       "regex": "(?i)^\\s*(?:in summary|to summarize|in conclusion)\\b",
       "name": "Essay-closer opener",
       "fix": "A post does not need a conclusion paragraph."
-    },
-    {
-      "id": "engagement-bait",
-      "regex": "(?i)\\b(?:agree\\?|thoughts\\?|who else\\b|am i wrong\\?)\\s*$",
-      "name": "Reflex engagement bait",
-      "fix": "Ask a question only you could ask, about the specific thing above it."
     },
     {
       "id": "not-because",

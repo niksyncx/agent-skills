@@ -70,12 +70,12 @@ What comes out automatically:
   and they are invisible in every editor you own.
 - **Typography.** 11 substitutions. Em dash to comma, en dash to hyphen, curly
   quotes to straight, ellipsis to three dots.
-- **The lexicon.** 174 words and 79 phrases with plain-English replacements,
+- **The lexicon.** 174 words and 54 phrases with plain-English replacements,
   capitalisation preserved and URLs untouched. It lives in `slop.json`.
 
-What gets flagged instead of fixed: 15 structural tells, including "It's not
-just X, it's Y", rule-of-three triads, one-word rhetorical questions and uniform
-sentence length. Changing the shape of a sentence needs judgement, so those come
+What gets flagged instead of fixed: 11 structural tells, including "It's not
+just X, it's Y", "Not because X. But because Y.", rule-of-three triads and
+one-word rhetorical questions. Changing the shape of a sentence needs judgement, so those come
 back for a rewrite rather than getting mangled by a regex.
 
 The five checks, scored 0-100, higher is more human:
@@ -142,7 +142,7 @@ survived byte-for-byte before anything is sent.
 ```
 skills/human/humanize.py         the three cleaning passes
 skills/human/detect.py           the five-check panel
-skills/human/slop.json           the lexicon: 174 words, 79 phrases, 17 invisible
+skills/human/slop.json           the lexicon: 174 words, 54 phrases, 17 invisible
                                  classes, 11 typographic swaps, 11 structures
 skills/support-reply/SKILL.md    investigation into a customer reply
 skills/internal-note/SKILL.md    investigation into a note for the team
