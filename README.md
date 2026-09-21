@@ -31,13 +31,6 @@ Or as a plugin, in an interactive `claude` terminal:
 /plugin install syncx@syncx-agent-skills
 ```
 
-Or do it yourself:
-
-```bash
-git clone https://github.com/niksyncx/agent-skills.git
-cp -r agent-skills/skills/* ~/.claude/skills/
-```
-
 Working on the skills themselves, point the marketplace at your checkout so
 edits are live without reinstalling:
 
@@ -46,9 +39,10 @@ edits are live without reinstalling:
 ```
 
 Project-local instead of global: copy the same folders into your repo's
-`.claude/skills/`. Not using Claude Code at all? Paste any single `SKILL.md` at
-the top of a chat and it runs as a mode. You lose the two Python tools, which is
-most of the point of `/human`, but the rest works.
+`.claude/skills/`.
+
+Claude Code only, for now. The skills are written against its plugin and skill
+loading, and nothing else has been tested.
 
 ## The four
 
@@ -157,7 +151,6 @@ survived byte-for-byte before anything is sent.
 ## Files
 
 ```
-AGENTS.md                        pointer file for agents that are not Claude
 skills/human/humanize.py         the three cleaning passes
 skills/human/detect.py           the five-check panel
 skills/human/slop.json           the lexicon: 81 words, 32 phrases, 17 invisible
@@ -176,6 +169,8 @@ workaround.
 
 ## Scope
 
-Internal Syncx tooling. No licence file, so no licence is granted. The Python is
-stdlib-only and has no Claude dependency, which means it also runs in a git
-hook, in CI, or under any other agent that can call a shell.
+Internal Syncx tooling. No licence file, so no licence is granted.
+
+The skills target Claude Code and are tested nowhere else. The two Python
+scripts are a separate matter: stdlib-only, no Claude dependency, so they run
+as a plain CLI, in a git hook, or in CI on their own.
