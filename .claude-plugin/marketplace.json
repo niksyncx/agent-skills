@@ -1,5 +1,5 @@
 {
-  "name": "syncx",
+  "name": "syncx-agent-skills",
   "description": "Syncx internal Claude Code plugins.",
   "owner": {
     "name": "Syncx"

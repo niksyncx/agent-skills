@@ -20,29 +20,29 @@ Nothing gets sent until you say so. These skills draft. You send.
 Paste this into Claude:
 
 ```
-https://github.com/niksyncx/syncx-agent-skill
+https://github.com/niksyncx/agent-skills
 Install this skill, then confirm /human works.
 ```
 
 Or as a plugin, in an interactive `claude` terminal:
 
 ```bash
-/plugin marketplace add niksyncx/syncx-agent-skill
-/plugin install syncx@syncx
+/plugin marketplace add niksyncx/agent-skills
+/plugin install syncx@syncx-agent-skills
 ```
 
 Or do it yourself:
 
 ```bash
-git clone https://github.com/niksyncx/syncx-agent-skill.git
-cp -r syncx-agent-skill/skills/* ~/.claude/skills/
+git clone https://github.com/niksyncx/agent-skills.git
+cp -r agent-skills/skills/* ~/.claude/skills/
 ```
 
 Working on the skills themselves, point the marketplace at your checkout so
 edits are live without reinstalling:
 
 ```bash
-/plugin marketplace add ~/Documents/GitHub/syncx-agent-skill
+/plugin marketplace add ~/Documents/GitHub/agent-skills
 ```
 
 Project-local instead of global: copy the same folders into your repo's
