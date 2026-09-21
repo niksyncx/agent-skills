@@ -76,13 +76,14 @@ URLs left untouched.
 Structural tells get **flagged, not rewritten**, because changing the shape of
 a sentence needs judgement:
 
-- "It's not just X, it's Y" and "not only X but also Y"
+- The set-up-then-correct family: "It's not just X, it's Y", "not only X but
+  also Y", "It isn't about X. It's about Y.", "Not because X. But because Y.",
+  "Not by doing X, but by doing Y.", "No X. No Y. Just Z."
 - Rule-of-three triads
-- Rhetorical one-word question lines: "The result?"
-- Rocket, fire, bulb, sparkle and dart emoji
-- Hashtag walls
-- Reflex engagement bait: "Thoughts?", "Agree?", "Who else?"
-- Uniform sentence length and uniform bullet length
+- Rhetorical lines standing in for a claim: "The result?", "And the fix? Y."
+- Model self-reference: "As an AI", "as a language model"
+- Essay closers: a paragraph opening with "In summary" or "In conclusion"
+- Three or more bullets of near-identical length
 
 That list is your job. Rewrite each flagged line by hand, keeping the meaning,
 then re-run `detect.py`. This is the part that moves the score from REVIEW to
@@ -118,13 +119,13 @@ of "the user will observe" and most of the gap closes.
 **Short drafts cannot pass.** Under four sentences, BURSTINESS, SPECIFICITY
 and VOICE all return `too short to judge` and score a flat 50, which sits
 below the 55 floor. STRUCTURE has no length guard and will usually read 100 on
-a short draft, which lifts the mean but cannot lift the floor. A 22-word reply tops out at 62.0 REVIEW no matter how
-well written it is. On anything short, read the FINGERPRINT line and ignore
-the verdict.
+a short draft, which lifts the mean but cannot lift the floor. A short reply
+cannot reach PASS no matter how well written it is. On anything short, read
+FINGERPRINT and STRUCTURE, and ignore the verdict.
 
 ## Say this honestly
 
-These are five local heuristics modelled on the signals public detectors key
+These are six local heuristics modelled on the signals public detectors key
 on. They run entirely on the user's machine and nothing is uploaded. They are
 **not** GPTZero, Originality, Copyleaks, Winston or Turnitin, they do not call
 those APIs, and they cannot promise those verdicts. Fixing what they measure
