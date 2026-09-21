@@ -47,6 +47,24 @@ claude plugin update syncx@syncx-agent-skills
 Marketplace first, that refetches the catalogue. The second command moves the
 pinned commit forward and re-caches. Restart Claude Code to apply.
 
+### Claude Code desktop app
+
+These are CLI commands, not slash commands, so the missing `/plugin` dialogs do
+not block them. Run them in the app's own Terminal panel, or paste this into a
+session and let Claude run them:
+
+```
+Run these two commands and show me the output:
+
+claude plugin marketplace update syncx-agent-skills
+claude plugin update syncx@syncx-agent-skills
+
+Then tell me which commit it moved to, and whether I need to restart.
+```
+
+Ask for the output. A pinned plugin fails quietly, and without seeing the
+commands run you cannot tell an update from a no-op.
+
 The paste-the-URL route has no update path, because it is not a defined install
 path. Use it to try the skills, use the plugin route if you want to keep them
 current.
