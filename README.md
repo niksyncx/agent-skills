@@ -47,10 +47,20 @@ claude plugin update syncx@syncx-agent-skills
 Marketplace first, that refetches the catalogue. The second command moves the
 pinned commit forward and re-caches. Restart Claude Code to apply.
 
-**Maintainers: bump `version` in `.claude-plugin/plugin.json` on every change
-you want people to receive.** The updater compares versions, not commits. Leave
-the version alone and it reports `already at the latest version`, fetches
-nothing, and everyone stays on an old copy while being told they are current.
+**Maintainers: the version must change for an update to reach anyone.** The
+updater compares versions, not commits. Leave the version alone and it reports
+`already at the latest version`, fetches nothing, and everyone stays on an old
+copy while being told they are current.
+
+A tracked `pre-commit` hook bumps the patch digit for you. Enable it once per
+clone, since git does not ship hooks:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+Bump the minor or major by hand when a change deserves it. The hook only ever
+touches the patch digit.
 
 ### Claude Code desktop app
 

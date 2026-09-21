@@ -1,0 +1,27 @@
+#!/bin/sh
+# Bump the patch version so `claude plugin update` has something to compare.
+# It compares version fields, not commits: leave the version alone and every
+# installed copy is told it is current while sitting on an old commit.
+#
+# ponytail: bumps on every commit, so a typo fix spends a patch number.
+# Semver purity loses to reachability here. Bump the minor or major by hand
+# when it matters, the hook only ever touches the patch digit.
+set -e
+f=.claude-plugin/plugin.json
+[ -f "$f" ] || exit 0
+
+python3 - "$f" <<'PY'
+import json, re, sys, collections, pathlib
+p = pathlib.Path(sys.argv[1])
+d = json.loads(p.read_text(), object_pairs_hook=collections.OrderedDict)
+v = str(d.get("version", "0.0.0"))
+m = re.match(r"^(\d+)\.(\d+)\.(\d+)$", v)
+if not m:
+    sys.exit(f"pre-commit: version {v!r} is not major.minor.patch, not bumping")
+major, minor, patch = (int(x) for x in m.groups())
+d["version"] = f"{major}.{minor}.{patch + 1}"
+p.write_text(json.dumps(d, indent=2) + "\n")
+print(f"pre-commit: version {v} -> {d['version']}")
+PY
+
+git add "$f"
