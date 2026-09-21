@@ -1,10 +1,13 @@
 # syncx-claude-plugin
 
-Internal Claude Code plugin for Syncx. One skill so far: `human`.
+Internal Claude Code plugin for Syncx. Two skills: `human` and `support-reply`.
 
 ## What it does
 
-Strips the machine fingerprint out of a draft and scores what is left. Two
+`support-reply` decides what to say to a customer. `human` decides how it
+reads. Use them in that order.
+
+`human` strips the machine fingerprint out of a draft and scores what is left. Two
 Python scripts, one editable lexicon, no dependencies, no network. Everything
 runs locally and nothing is uploaded.
 
@@ -55,9 +58,9 @@ skills/human/
   humanize.py          three passes: invisible chars, typography, lexicon
   detect.py            five checks, 0-100, higher is more human
   slop.json            the lexicon. Edit it. It is meant to be yours.
-extras/support-reply/
-  SKILL.md             not shipped as a plugin skill yet, kept here so it is
-                       version controlled. git mv it into skills/ to ship it.
+skills/support-reply/
+  SKILL.md             turn a finished investigation into a reply the
+                       customer can act on, then hand it to human
 ```
 
 ## The lexicon is yours
