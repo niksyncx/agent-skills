@@ -22,10 +22,16 @@ marketing copy. Do not use it on code, logs or exact error strings.
 
 ## Install
 
-Once this is pushed to the Syncx org, teammates use the remote instead:
+```bash
+/plugin marketplace add niksyncx/syncx-agent-skill
+/plugin install syncx@syncx
+```
+
+Working on the skills themselves, point it at your checkout instead, so edits
+are live without reinstalling:
 
 ```bash
-/plugin marketplace add syncx-org/syncx-agent-skill
+/plugin marketplace add ~/Documents/GitHub/syncx-agent-skill
 /plugin install syncx@syncx
 ```
 
@@ -36,7 +42,7 @@ Both commands need an interactive `claude` terminal.
 `/plugin` does nothing in the desktop app. Paste this into a session instead:
 
 ```
-https://github.com/syncx-org/syncx-agent-skill
+https://github.com/niksyncx/syncx-agent-skill
 Install this skill, then confirm /human works.
 ```
 
