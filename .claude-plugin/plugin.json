@@ -1,6 +1,6 @@
 {
   "name": "syncx",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Syncx writing tooling for Claude Code. support-reply turns a finished Stock-Sync investigation into a reply the customer can act on. human strips the machine fingerprint out of any draft and scores what is left against a five-check panel. explain-change walks a code change, diff, branch or PR through background, intuition, code and consequences as plain text. internal-note writes up an investigation for the team, keeping what is proven separate from what is assumed.",
   "author": {
     "name": "Syncx"

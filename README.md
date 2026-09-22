@@ -112,9 +112,65 @@ pbpaste | python3 humanize.py - --report     # nothing touches disk
 `detect.py` exits 0 on PASS and 1 otherwise, so it works as a CI gate on docs or
 a pre-commit hook.
 
-Text wrapped in `@@like this@@` is skipped by every pass and excluded from every
-check, and the markers are dropped from the output. That is how quoted error
-strings, vendor field names and SKUs survive byte-for-byte.
+## Protecting what must not change: `@@`
+
+The cleaner rewrites plain words wherever it finds them. It has no idea whether
+a word is your prose or somebody else's exact words, so left alone it will
+happily edit an error message into something the vendor never said.
+
+Wrap anything that must survive in `@@`:
+
+```
+@@Shopify said "delve into the robust tapestry"@@ but the feed is ever-evolving
+└─ survives byte-for-byte ──────────────────────┘                └─ replaced ─┘
+```
+
+The markers are dropped from the output, so the cleaned text ships as it is.
+`detect.py` ignores protected spans too, which stops a quoted vendor string
+dragging your slop score down for text you are not allowed to touch.
+
+### The three things worth marking
+
+**A customer's own words.** Their sentence is evidence. Paraphrasing it into
+better English is how a quote stops being a quote.
+
+```
+in:   The merchant wrote @@it's not just slow, it's completely broken@@ on Friday.
+out:  The merchant wrote it's not just slow, it's completely broken on Friday.
+```
+
+That phrasing is a structural tell, so unmarked it would be flagged for rewrite.
+Marked, it is not your sentence to fix.
+
+**Error messages and field names.** One changed character makes an error string
+ungreppable and a field name wrong.
+
+```
+in:   The run failed with @@Shopify said "handle already taken"@@ on every row.
+in:   @@existing_product_identifier@@ was pointed at the wrong column.
+```
+
+**Code, paths and identifiers.** SKUs, profile IDs, file paths, commands.
+
+```
+in:   Set @@core.hooksPath@@ to @@.githooks@@ or the version stops bumping.
+in:   @@LO-03-****-00016-00@@ was renamed in the store.
+```
+
+### Three rules
+
+- **One line per span.** A span cannot cross a newline, so forgetting a closing
+  marker costs you one line, not the rest of the document.
+- **No nesting.** Markers pair first-to-second, third-to-fourth. In
+  `@@a@@b@@c@@` the `b` is exposed.
+- **Check the count.** The report prints `2 protected span(s) left untouched`.
+  A mistyped marker shows up as a wrong count, before it shows up as damage.
+
+Whole files of code, config, SQL or logs are not a case for `@@`. Do not run the
+cleaner on them at all.
+
+The marker is defined in `slop.json` under `protect`, so you can change it
+without touching the Python.
 
 What comes out automatically:
 

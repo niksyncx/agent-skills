@@ -68,6 +68,23 @@ assert "nik@syncx.com" in clean("mail nik@syncx.com about ever-evolving")
 assert clean("@@a ever-evolving@@b ever-evolving@@ c@@") == "a ever-evolvingb changing c", \
     clean("@@a ever-evolving@@b ever-evolving@@ c@@")
 
+# --- a marked span containing a dot ------------------------------------------
+# URL_RE's email arm (\S+@\S+\.\S+) used to swallow these whole and restore
+# them with the markers still attached, so protect_spans runs first.
+assert clean("Set @@core.hooksPath@@ to @@.githooks@@ now.") == \
+    "Set core.hooksPath to .githooks now.", clean("Set @@core.hooksPath@@ to @@.githooks@@ now.")
+assert clean("Read @@slop.json@@ and @@skills/human/detect.py@@ ever-evolving.") == \
+    "Read slop.json and skills/human/detect.py changing.", \
+    clean("Read @@slop.json@@ and @@skills/human/detect.py@@ ever-evolving.")
+assert clean("Mail @@ops@store.myshopify.com@@ about ever-evolving.") == \
+    "Mail ops@store.myshopify.com about changing.", \
+    clean("Mail @@ops@store.myshopify.com@@ about ever-evolving.")
+# unmarked URLs and emails are still protected by URL_RE itself
+out = clean("See https://github.com/niksyncx/agent-skills and mail nik@syncx.com re ever-evolving.")
+assert "https://github.com/niksyncx/agent-skills" in out, out
+assert "nik@syncx.com" in out, out
+assert "changing" in out, out
+
 # --- regression: unmarked text behaves exactly as before ----------------------
 assert clean("We leverage robust synergy to delve into it.") == \
     "We use solid overlap to look at it.", clean("We leverage robust synergy to delve into it.")

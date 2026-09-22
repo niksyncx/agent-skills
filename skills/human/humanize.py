@@ -209,16 +209,19 @@ def scan_structures(text, lex):
 
 
 def humanize(text, lex):
-    text, urls = protect_urls(text)
+    # Spans first: URL_RE's email arm (\S+@\S+\.\S+) otherwise swallows a
+    # marked span containing a dot, such as @@core.hooksPath@@, and restores it
+    # with the markers still attached.
     text, keeps = protect_spans(text, lex)
+    text, urls = protect_urls(text)
     text, inv = pass_invisible(text, lex)
     text, typo = pass_typographic(text, lex)
     text, lexi = pass_lexical(text, lex)
     # Scan while the sentinels still stand, so a protected quote containing a
     # tell does not get flagged for a shape its author cannot change.
     structures = scan_structures(text, lex)
-    text = restore_spans(text, keeps)
     text = restore_urls(text, urls)
+    text = restore_spans(text, keeps)
     return text.strip() + "\n", {
         "invisible": inv,
         "typographic": typo,
