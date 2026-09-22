@@ -1,6 +1,10 @@
 {
   "version": "1.0",
   "note": "Lexicon used by humanize.py and detect.py. Replacements are plain-English and keep the sentence grammatical.",
+  "protect": {
+    "regex": "@@(.+?)@@",
+    "note": "Text inside the markers is left alone by every pass and excluded from scoring. Markers are dropped from the output. Single line only, and nesting is not supported."
+  },
   "invisible": [
     {
       "cp": "U+200B",

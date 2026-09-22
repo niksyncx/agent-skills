@@ -167,7 +167,19 @@ CHECKS = ["BURSTINESS", "SPECIFICITY", "SLOP DENSITY", "FINGERPRINT", "VOICE",
           "STRUCTURE"]
 
 
+def strip_protected(text, lex):
+    """Drop @@...@@ spans before scoring. Whatever the author protected is not
+    theirs to change, so judging it would punish correctness."""
+    spec = lex.get("protect")
+    if not spec:
+        return text, 0
+    pattern = re.compile(spec["regex"])
+    n = len(pattern.findall(text))
+    return pattern.sub(" ", text), n
+
+
 def run(text, lex):
+    text, protected = strip_protected(text, lex)
     results = {}
     results["BURSTINESS"] = check_burstiness(text)
     results["SPECIFICITY"] = check_specificity(text)
@@ -180,7 +192,7 @@ def run(text, lex):
     overall = statistics.mean(scores) * 0.6 + min(scores) * 0.4
     verdict = "PASS" if overall >= 70 and min(scores) >= 55 else (
         "REVIEW" if overall >= 50 else "FLAGGED")
-    return results, overall, verdict
+    return results, overall, verdict, protected
 
 
 def bar(score, width=24):
@@ -188,7 +200,7 @@ def bar(score, width=24):
     return "#" * filled + "." * (width - filled)
 
 
-def render(results, overall, verdict, label=None, out=sys.stdout):
+def render(results, overall, verdict, label=None, out=sys.stdout, protected=0):
     title = "AI DETECTION PANEL" + (f"  -  {label}" if label else "")
     print("\n" + title, file=out)
     print("=" * max(len(title), 62), file=out)
@@ -198,6 +210,9 @@ def render(results, overall, verdict, label=None, out=sys.stdout):
         print(f"  {'':<13} {detail}", file=out)
     print("-" * 62, file=out)
     print(f"  {'HUMAN SCORE':<13} {bar(overall)} {overall:5.1f}   {verdict}", file=out)
+    if protected:
+        print(f"  {'':<13} {protected} protected span(s) excluded from every check",
+              file=out)
     if verdict != "PASS":
         weakest = min(CHECKS, key=lambda c: results[c][0])
         print(f"\n  Weakest signal: {weakest}. Fix that first.", file=out)
@@ -221,12 +236,13 @@ def main():
 
     payload = []
     for name, text in targets:
-        results, overall, verdict = run(text, lex)
+        results, overall, verdict, protected = run(text, lex)
         payload.append({
             "source": name,
             "checks": {k: {"score": round(v[0], 1), "detail": v[1]} for k, v in results.items()},
             "human_score": round(overall, 1),
             "verdict": verdict,
+            "protected_spans": protected,
         })
 
     if args.json:
@@ -234,8 +250,10 @@ def main():
         return
 
     for (name, text), p in zip(targets, payload):
-        results, overall, verdict = run(text, lex)
-        render(results, overall, verdict, label=os.path.basename(name) if args.compare else None)
+        results, overall, verdict, protected = run(text, lex)
+        render(results, overall, verdict,
+               label=os.path.basename(name) if args.compare else None,
+               protected=protected)
     if args.compare:
         a, b = payload
         delta = b["human_score"] - a["human_score"]

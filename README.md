@@ -112,6 +112,10 @@ pbpaste | python3 humanize.py - --report     # nothing touches disk
 `detect.py` exits 0 on PASS and 1 otherwise, so it works as a CI gate on docs or
 a pre-commit hook.
 
+Text wrapped in `@@like this@@` is skipped by every pass and excluded from every
+check, and the markers are dropped from the output. That is how quoted error
+strings, vendor field names and SKUs survive byte-for-byte.
+
 What comes out automatically:
 
 - **Invisible characters.** 17 classes: zero-width spaces and joiners, word

@@ -38,19 +38,45 @@ still a bad reply.
 Pair it with `support-reply` for customer answers: that skill decides what to
 say, this one decides how it reads.
 
+## Protecting text: `@@like this@@`
+
+Anything between `@@` markers is skipped by every pass and excluded from every
+check. The markers are dropped from the output, so the cleaned text is ready to
+send.
+
+```
+@@Shopify said "delve into the robust tapestry"@@ but the feed is ever-evolving
+└─ survives byte-for-byte ──────────────────────┘                └─ replaced ─┘
+```
+
+Use it for quoted error strings, vendor field names, a customer's own words in
+an internal note, and markdown inline code. Several spans can sit in one
+sentence, and unprotected slop between them is still caught.
+
+Three things to know:
+
+- **Single line only.** A span cannot cross a newline, so a forgotten closing
+  marker cannot swallow the rest of the draft.
+- **No nesting.** Markers pair first-to-second, third-to-fourth. In
+  `@@a@@b@@c@@` the `b` is exposed.
+- **Check the report.** It prints `2 protected span(s) left untouched`. A
+  mistyped marker shows up as a missing count rather than as damage.
+
+The marker lives in `slop.json` under `protect`, so it can be changed without
+touching the Python.
+
 ## Do not run it on these
 
 - **Code, config, SQL, logs, stack traces.** The lexical pass rewrites plain
   words wherever it finds them, and it does not know it is inside a fence.
-- **Markdown with inline code spans.** It protects URLs, nothing else. A
-  documented character inside backticks gets substituted like prose and the
-  meaning dies. Split the prose out, clean that, put it back.
-- **Exact error strings and vendor field names.** Those are evidence. Keep
-  them byte-for-byte.
+  Wrapping a whole file in `@@` is not the answer, just do not run it.
 - **Anything carrying customer data.** No API keys, tokens, store domains,
   account IDs or merchant names in a draft file. Pipe stdin instead, so
   nothing lands on disk. If you must write a file, mask the identifiers
   before it exists, not after.
+
+Error strings, vendor field names and markdown code spans used to be on this
+list. Wrap them in `@@` instead.
 
 ## What gets fixed automatically
 

@@ -70,6 +70,35 @@ def restore_urls(text, found):
     return text
 
 
+def _protect_re(lex):
+    spec = lex.get("protect")
+    return re.compile(spec["regex"]) if spec else None
+
+
+def protect_spans(text, lex):
+    """Stash @@...@@ spans so no pass rewrites inside them.
+
+    The delimiters are dropped here, not restored later, so the cleaned output
+    carries the protected text without the markers.
+    """
+    pattern = _protect_re(lex)
+    if not pattern:
+        return text, []
+    found = []
+
+    def stash(m):
+        found.append(m.group(1))
+        return f"\x00KEEP{len(found) - 1}\x00"
+
+    return pattern.sub(stash, text), found
+
+
+def restore_spans(text, found):
+    for i, span in enumerate(found):
+        text = text.replace(f"\x00KEEP{i}\x00", span)
+    return text
+
+
 def pass_invisible(text, lex):
     """Delete or space-normalise invisible characters. Returns (text, hits)."""
     hits = []
@@ -181,15 +210,21 @@ def scan_structures(text, lex):
 
 def humanize(text, lex):
     text, urls = protect_urls(text)
+    text, keeps = protect_spans(text, lex)
     text, inv = pass_invisible(text, lex)
     text, typo = pass_typographic(text, lex)
     text, lexi = pass_lexical(text, lex)
+    # Scan while the sentinels still stand, so a protected quote containing a
+    # tell does not get flagged for a shape its author cannot change.
+    structures = scan_structures(text, lex)
+    text = restore_spans(text, keeps)
     text = restore_urls(text, urls)
     return text.strip() + "\n", {
         "invisible": inv,
         "typographic": typo,
         "lexical": lexi,
-        "structures": scan_structures(text, lex),
+        "structures": structures,
+        "protected": keeps,
     }
 
 
@@ -204,6 +239,9 @@ def render_report(report, out=sys.stderr):
     head("HUMANIZE REPORT")
     print(f"{total} machine artefacts removed, "
           f"{len(report['structures'])} structural tells flagged for rewrite", file=out)
+    kept = len(report.get("protected") or [])
+    if kept:
+        print(f"{kept} protected span(s) left untouched", file=out)
 
     if report["invisible"]:
         head("1. INVISIBLE CHARACTERS")
@@ -221,7 +259,7 @@ def render_report(report, out=sys.stderr):
         head("4. STRUCTURAL TELLS  (not auto-fixed - rewrite these yourself)")
         for h in report["structures"]:
             print(f"  {h['count']:>3}x  {h['name']}\n        {h['fix']}", file=out)
-    if not any(report.values()):
+    if not any(report[k] for k in ("invisible", "typographic", "lexical", "structures")):
         head("CLEAN")
         print("  Nothing to strip.", file=out)
     print("", file=out)

@@ -102,8 +102,12 @@ Two things that will happen and are fine:
 - **The score will be low.** Bullets are short, and three of the checks
   return `too short to judge` on fragments. Read the FINGERPRINT line, ignore
   the verdict.
-- **The lexical pass does not know a field name from a word.** Check that
-  every identifier, error string and column name survived byte-for-byte.
+- **Wrap field names and error strings in `@@`.** `@@dedupe_check@@` and
+  `@@Shopify said "handle already taken"@@` are skipped by the lexical pass and
+  excluded from the score, and the markers are dropped from the output. Rule 6
+  says these are evidence, so this is how you keep them byte-for-byte.
+- **Read the diff for anything you did not mark.** The lexical pass cannot
+  tell a column name from a word.
 
 ## Before posting
 

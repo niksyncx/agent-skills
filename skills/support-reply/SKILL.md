@@ -78,7 +78,9 @@ A finished reply holds store names, SKUs, profile IDs and run IDs. That is custo
 
 **What it will actually find.** Em dashes, and usually nothing else. A reply written to the rules above scores well before you touch it: rule 6 maxes SPECIFICITY, and writing "your feed" instead of "the user's feed" maxes VOICE. Expect the em dash pass to carry most of the gain on its own.
 
-**Read the diff, do not trust the output.** The lexical pass does not know it is inside a quoted vendor string or a SKU. Check that every identifier, error string and field name survived byte-for-byte before you send.
+**Wrap the evidence in `@@`.** SKUs, profile IDs, quoted vendor strings and exact error text go inside `@@...@@`, which the lexical pass skips and the score ignores. The markers are stripped from the output.
+
+**Read the diff anyway.** Anything you did not mark is fair game for the lexical pass. Check that every identifier, error string and field name survived byte-for-byte before you send.
 
 **Ignore the verdict on a short reply.** Under four sentences, three of the checks return `too short to judge` and score a flat 50, which is below the 55 floor, so a two-line answer can never reach PASS no matter how good it is. A 22-word reply tops out at 62.0 REVIEW. On anything short, read the FINGERPRINT line and ignore the rest.
 
