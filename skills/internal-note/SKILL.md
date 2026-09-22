@@ -71,6 +71,12 @@ source or an `Assumed` bullet. Pick one.
 **8. No narrative.** No "I started by looking at", no "after some digging".
 Nobody reads an internal note for the journey.
 
+**9. No em dashes. Write them out as a comma or a full stop.** Do not rely on
+the humanize pass to catch them. That pass runs last, it is easy to skip, and a
+note pasted straight into Slack never goes through it at all. The em dash is the
+one mark that makes a note read as generated, and a teammate who thinks nobody
+checked the findings will go and check them again.
+
 ## Customer data
 
 An investigation note holds store domains, SKUs, merchant names, profile IDs
@@ -111,6 +117,7 @@ Two things that will happen and are fine:
 
 ## Before posting
 
+- Zero em dashes?
 - Status line present, and is it actually the status?
 - Is every `Found` bullet sourced, or should it be in `Assumed`?
 - Is `Assumed` present, even if it says nothing?

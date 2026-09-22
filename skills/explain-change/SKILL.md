@@ -44,6 +44,10 @@ complete is worse than a missing one.
 
 ## Rules
 
+- **No em dashes.** Comma or full stop. Write it right the first time rather
+  than leaving it for the humanize pass: that pass runs last, it is easy to
+  skip, and an explanation written straight into a reply never goes through it.
+  It is the one mark that makes a correct explanation read as generated.
 - Plain prose. Explain jargon the first time it appears.
 - No ASCII diagrams, no box drawing. If structure matters, use a short list or
   a small table.
