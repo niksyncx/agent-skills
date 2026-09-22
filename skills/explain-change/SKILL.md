@@ -56,13 +56,36 @@ complete is worse than a missing one.
 Run the `human` skill on the prose before showing the explanation. That is the
 last step, after the content is right.
 
-Prose only. Code blocks, file paths, exact error strings and identifiers go
-through untouched - `humanize.py` rewrites plain words wherever it finds them
-and does not know it is inside a fence. Split the prose out, clean it, put it
-back.
-
-Mask customer data and secrets before any text lands on disk. Pipe stdin:
-
 ```bash
 pbpaste | python3 humanize.py - --report
 ```
+
+Mask customer data and secrets before any text lands on disk. Pipe stdin.
+
+### Mark the exact bits with `@@` first
+
+`humanize.py` rewrites plain words wherever it finds them and does not know it
+is inside a fence. This page is dense with things that must not move: file
+paths, line references, function and field names, commands, exact error text.
+Wrap each one in `@@`:
+
+```
+The retry loop in @@src/sync/runner.py:88@@ now caps at 3, and
+@@existing_product_identifier@@ is read before @@check_existing@@ runs.
+It failed with @@Shopify said "handle already taken"@@ on every row.
+```
+
+Everything inside the markers survives byte-for-byte and is excluded from the
+score. Everything outside is cleaned normally.
+
+One span per line, and no nesting. Check the report's
+`N protected span(s) left untouched` against what you marked.
+
+**The markers never reach the reader.** `humanize.py` strips them, so the
+cleaned text is the explanation. If you skip the humanize pass, delete the
+markers yourself before showing the page: `@@` is a working mark for the
+cleaning step, not part of the output.
+
+Fenced code blocks are a different problem. Do not mark them and do not feed
+them through at all, since a block can run to dozens of lines and a span cannot
+cross a newline. Clean the prose around them and leave the blocks alone.
