@@ -72,8 +72,17 @@ and the walkthrough stays out of the reply unless they ask for it.
 
 ## Run it through human before sending
 
-Run the `human` skill, `/syncx:human` when this is installed as the plugin. It
-knows where its own scripts live, so there is no path to get wrong.
+The scripts are a sibling of this skill, so build the path from the base
+directory you were handed when this skill was invoked. Do not search for them,
+and do not try `~/.claude/skills/human`: that exists only on a symlinked
+install, and a plugin install keeps them under a versioned directory that moves
+on every update.
+
+```bash
+cd "<this skill's base directory>"
+pbpaste | python3 ../human/humanize.py - --report
+pbpaste | python3 ../human/detect.py -
+```
 
 Hand it the reply through stdin. Never write the draft to a file.
 

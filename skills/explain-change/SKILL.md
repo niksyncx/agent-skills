@@ -61,10 +61,20 @@ complete is worse than a missing one.
 
 ## De-slop before handing it over
 
-Run the `human` skill on the prose before showing the explanation,
-`/syncx:human` when this is installed as the plugin. It knows where its own
-scripts live, so there is no path to get wrong. That is the last step, after
+Clean the prose before showing the explanation. That is the last step, after
 the content is right.
+
+The scripts are a sibling of this skill, so build the path from the base
+directory you were handed when this skill was invoked. Do not search for them,
+and do not try `~/.claude/skills/human`: that exists only on a symlinked
+install, and a plugin install keeps them under a versioned directory that moves
+on every update.
+
+```bash
+cd "<this skill's base directory>"
+pbpaste | python3 ../human/humanize.py - --report
+pbpaste | python3 ../human/detect.py -
+```
 
 Hand it the prose through stdin. Mask customer data and secrets before any text
 lands on disk.
