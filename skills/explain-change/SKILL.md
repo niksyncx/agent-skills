@@ -48,6 +48,10 @@ complete is worse than a missing one.
   than leaving it for the humanize pass: that pass runs last, it is easy to
   skip, and an explanation written straight into a reply never goes through it.
   It is the one mark that makes a correct explanation read as generated.
+- Backtick every identifier: file paths, line references, function and field
+  names, commands, config keys. Backticks are for the reader and stay in the
+  output. `@@` is for the cleaner and gets stripped. They are different marks,
+  and backticks alone do not protect a word from the lexicon.
 - Plain prose. Explain jargon the first time it appears.
 - No ASCII diagrams, no box drawing. If structure matters, use a short list or
   a small table.

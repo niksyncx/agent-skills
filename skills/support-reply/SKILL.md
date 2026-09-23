@@ -25,6 +25,11 @@ Long is not thorough. Long reads as evasive, which is what they are already angr
 
 **2. Never explain a mechanism you have not verified.** A generic answer that sounds right is the expensive failure in this work. It ships mid-escalation, the customer acts on it, and the real cause keeps running for days. "Checking that now" always beats a plausible sentence.
 
+**3a. No backticks.** A helpdesk or email client often shows them as literal
+characters, so `SKU-001` arrives with the marks around it. Internal notes render
+markdown, customer replies frequently do not. Quote identifiers plainly. `@@`
+still applies, it is stripped before the reply is sent.
+
 **3. No internal vocabulary.** `row_group` becomes "the setting that groups rows into one product". `dedupe_check` becomes "the step that checks whether the product is already in your store". Names the customer can see in the app are fine, quote those exactly.
 
 **4. Split by who fixes it.** We fixed / you change / your supplier changes. Conflating these is what makes people feel stonewalled. Name exact records in the last two.

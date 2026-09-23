@@ -25,11 +25,11 @@ and never shows its working. An internal note does all three in reverse.
 Status: [one line. blocked / waiting on X / fixed, unverified / done]
 
 Found:
-- [the cause, with the real field and value]
+- [the cause, with the real field and value, both backticked]
 - [the second cause, if there is one]
 
 Proven:
-- [what you actually read, and where. run ID, log line, config value]
+- [what you read, and where. `run ID`, `log line`, `config value`]
 
 Assumed:
 - [what you inferred but did not confirm, and what would confirm it]
@@ -71,11 +71,42 @@ source or an `Assumed` bullet. Pick one.
 **8. No narrative.** No "I started by looking at", no "after some digging".
 Nobody reads an internal note for the journey.
 
-**9. No em dashes. Write them out as a comma or a full stop.** Do not rely on
+**9. Backtick every identifier.** Field names, SKUs, profile and run IDs, file
+paths, config keys, exact values, timestamps. A wall of bare prose makes a
+teammate hunt for the thing they need to grep. `335704` and `committed.updatedAt`
+should be findable at a glance, not read for.
+
+**10. No em dashes. Write them out as a comma or a full stop.** Do not rely on
 the humanize pass to catch them. That pass runs last, it is easy to skip, and a
 note pasted straight into Slack never goes through it at all. The em dash is the
 one mark that makes a note read as generated, and a teammate who thinks nobody
 checked the findings will go and check them again.
+
+## Two marks, two jobs
+
+They look similar and do opposite things:
+
+- **Backticks are for the reader.** `` `static_flag` `` stays in the output and
+  makes the identifier stand out. They do not protect anything.
+- **`@@` is for the cleaner.** `@@static_flag@@` is skipped by the humanize pass
+  and stripped from the output.
+
+Use both on anything that is both an identifier and fragile:
+
+```
+The @@`auto_get_higher_qty`@@ flag is false on profile @@`335704`@@.
+```
+
+**Backticks alone will not save you.** A one-word field name that happens to be
+in the lexicon gets silently renamed:
+
+```
+`robust` and `seamless`   ->   `solid` and `clean`
+```
+
+`snake_case` names survive without `@@` because the lexicon matches on word
+boundaries and an underscore is a word character. That is luck, not a guarantee.
+Mark anything you cannot afford to lose.
 
 ## Customer data
 
