@@ -17,21 +17,19 @@ Nothing gets sent until you say so. These skills draft. You send.
 
 ## Install
 
-Paste this into Claude:
-
-```
-https://github.com/niksyncx/agent-skills
-Install this skill, then confirm /human works.
-```
-
-Or as a plugin, in an interactive `claude` terminal:
+as a plugin, in an interactive `claude` terminal:
 
 ```bash
 /plugin marketplace add niksyncx/agent-skills
 /plugin install syncx@syncx-agent-skills
 ```
 
-Claude Code only, for now. The skills are written against its plugin and skill
+
+On  Claude Desktop App 
+Go to Customize > Plugins tab 
+then Add marketplace. paste `niksyncx/agent-skills` in URL text box, then click "Sync". 
+
+Claude only, for now. The skills are written against its plugin and skill
 loading, and nothing else has been tested.
 
 ## Updating
