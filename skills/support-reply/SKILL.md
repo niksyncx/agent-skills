@@ -67,12 +67,10 @@ and the walkthrough stays out of the reply unless they ask for it.
 
 ## Run it through human before sending
 
-Pipe it. Never write the draft to a file. Paths are relative to the `human`
-skill's base directory, which you get when that skill is invoked:
+Run the `human` skill, `/syncx:human` when this is installed as the plugin. It
+knows where its own scripts live, so there is no path to get wrong.
 
-```bash
-pbpaste | python3 humanize.py - --report
-```
+Hand it the reply through stdin. Never write the draft to a file.
 
 A finished reply holds store names, SKUs, profile IDs and run IDs. That is customer data, and a draft file on disk gets copied, synced and backed up. Stdin leaves nothing behind. If you need a before/after score, mask the identifiers first.
 

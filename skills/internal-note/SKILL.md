@@ -96,12 +96,12 @@ and run IDs. Mask the identifying ones before the note exists, not after.
 Same as everything else here, and for the same reason: a note full of stock
 phrases reads as though nobody checked it.
 
-```bash
-pbpaste | python3 humanize.py - --report
-```
+Run the `human` skill, `/syncx:human` when this is installed as the plugin. It
+knows where its own scripts live, so there is no path to get wrong.
 
-Paths are relative to the `human` skill's base directory. Pipe it, never write
-the draft to a file.
+Hand it the note through stdin. Never write the draft to a file: it holds
+profile IDs, run IDs and SKUs, and a file on disk gets copied, synced and
+backed up.
 
 Two things that will happen and are fine:
 
