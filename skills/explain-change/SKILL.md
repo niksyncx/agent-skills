@@ -69,6 +69,15 @@ the content is right.
 Hand it the prose through stdin. Mask customer data and secrets before any text
 lands on disk.
 
+### Which checks apply
+
+An explanation is prose, so all six are meaningful. FINGERPRINT, SLOP DENSITY
+and STRUCTURE must be 100. The other three depend on how it is written, and
+BURSTINESS is the usual weak one, because walking through a change tends to
+produce sentences of similar length. Break one in half and let another run long.
+
+Code blocks distort every count, so score the prose on its own.
+
 ### Mark the exact bits with `@@` first
 
 `humanize.py` rewrites plain words wherever it finds them and does not know it

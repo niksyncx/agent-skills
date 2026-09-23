@@ -136,15 +136,31 @@ backed up.
 
 Two things that will happen and are fine:
 
-- **The score will be low.** Bullets are short, and three of the checks
-  return `too short to judge` on fragments. Read the FINGERPRINT line, ignore
-  the verdict.
+- **The score will be low, and that is correct.** See the table below for
+  which checks to read.
 - **Wrap field names and error strings in `@@`.** `@@dedupe_check@@` and
   `@@Shopify said "handle already taken"@@` are skipped by the lexical pass and
   excluded from the score, and the markers are dropped from the output. Rule 6
   says these are evidence, so this is how you keep them byte-for-byte.
 - **Read the diff for anything you did not mark.** The lexical pass cannot
   tell a column name from a word.
+
+### Which checks apply
+
+Read these four. They are valid on any text type:
+
+| check | bar |
+| --- | --- |
+| FINGERPRINT | 100. Anything less means an em dash, a curly quote or an invisible character got through. |
+| SLOP DENSITY | 100. Any hit is a stock phrase worth replacing. |
+| STRUCTURE | 100. Any hit is a templated shape worth rewriting. |
+| SPECIFICITY | 70+. A note full of IDs and figures scores near 100 without trying. |
+
+**Ignore BURSTINESS, VOICE and the overall verdict.** They measure prose shape,
+and this format fails them by following its own rules: one line per fact makes
+bullets uniform, and no narrative means no contractions and no first person. A
+note that scored well on those two would be a worse note. Expect an overall in
+the 40s and do not chase it.
 
 ## Before posting
 

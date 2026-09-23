@@ -152,7 +152,9 @@ and VOICE all return `too short to judge` and score a flat 50, which sits
 below the 55 floor. STRUCTURE has no length guard and will usually read 100 on
 a short draft, which lifts the mean but cannot lift the floor. A short reply
 cannot reach PASS no matter how well written it is. On anything short, read
-FINGERPRINT and STRUCTURE, and ignore the verdict.
+FINGERPRINT, SLOP DENSITY and STRUCTURE, and ignore the verdict. Those three
+have no length guard and no prose assumption, so they read the same on four
+words or four hundred.
 
 ## Say this honestly
 

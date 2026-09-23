@@ -85,7 +85,9 @@ A finished reply holds store names, SKUs, profile IDs and run IDs. That is custo
 
 **Read the diff anyway.** Anything you did not mark is fair game for the lexical pass. Check that every identifier, error string and field name survived byte-for-byte before you send.
 
-**Ignore the verdict on a short reply.** Under four sentences, three of the checks return `too short to judge` and score a flat 50, which is below the 55 floor, so a two-line answer can never reach PASS no matter how good it is. A 22-word reply tops out at 62.0 REVIEW. On anything short, read the FINGERPRINT line and ignore the rest.
+**Which checks apply.** A reply is prose, so all six are meaningful and PASS is reachable. Read them in this order: FINGERPRINT and SLOP DENSITY and STRUCTURE must be 100, SPECIFICITY rides on rule 6, VOICE rides on writing "your feed" rather than "the user's feed", BURSTINESS wants one short sentence next to one long one.
+
+**Except on a short reply.** Under four sentences BURSTINESS, SPECIFICITY and VOICE return `too short to judge` and flatten to 50, below the 55 floor, so a two-line answer can never PASS however good it is. On anything that short read FINGERPRINT, SLOP DENSITY and STRUCTURE only, and ignore the verdict.
 
 ## Before sending
 
