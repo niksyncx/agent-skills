@@ -16,6 +16,11 @@ Two tools live in this folder and they both actually run. Use them. Do not
 eyeball this. Paths below are relative to this skill's base directory, which
 is given to you when the skill is invoked.
 
+**Never guess where the scripts live.** `~/.claude/skills/human` is only there
+on a symlinked install, and a plugin install keeps them under a versioned cache
+directory that changes on every update. If you do not have a base directory,
+invoke this skill to get one rather than searching the filesystem for it.
+
 ```bash
 python3 humanize.py draft.txt --report        # clean it, show what changed
 python3 detect.py draft.txt                    # score it, six checks
